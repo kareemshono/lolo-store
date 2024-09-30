@@ -1,0 +1,91 @@
+.navContainer {
+    width: 100vw ;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+   
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    .logo{
+        width: 20%;
+        display: flex;
+        align-items: center;
+
+        
+    }
+    .navbar {
+       width: 80%; 
+        
+        display: flex;
+        justify-content: flex-end;
+       
+        align-items: center;
+       .hamBtn {
+        display: none;
+        appearance: none;
+        border: none;
+        outline: none;
+        background: none;
+        margin-right: 2rem;
+        z-index: 8;
+        cursor: pointer;
+          
+        span {
+            display: block;
+            height: 3px;
+            width: 25px;
+            background-color: var(--primary-navy);
+            border-radius: 0.2rem;
+            margin-bottom: 5px;
+            transform-origin: 0 0;
+            transition: 0.5s;
+          }
+    
+          &:hover :nth-child(2) {
+            transform: translateX(10px);
+            background-color: var(--primary-yellow);
+          }
+        }
+    
+        .hamBtn.isActive span:nth-child(1) {
+          transform: translate(2px, -4px) rotate(45deg);
+          background-color: var(--primary-navy);
+        }
+    
+        .hamBtn.isActive span:nth-child(2) {
+          opacity: 0;
+          transform: translate(15px);
+        }
+    
+        .hamBtn.isActive span:nth-child(3) {
+          transform: translate(-1px, -3px) rotate(-45deg);
+          background-color: var(--primary-navy);
+        
+
+       }
+       .navList{
+        box-sizing: border-box;
+        display: flex;
+        list-style: none;
+        align-items: center;
+        gap: 40px;
+        padding: 0;
+        margin: 0;
+        li{
+           .navLink {
+            font-size: 1.2rem;
+            padding: 10px 0px;
+            font-weight: 500;
+            border-bottom: 2.5px solid transparent;
+            transition: .3s all ease-in-out;
+            
+
+            &:hover {
+                border-color: var(--primary-pink);
+            }
+           }
+        }
+        }
+    }
+
+}
