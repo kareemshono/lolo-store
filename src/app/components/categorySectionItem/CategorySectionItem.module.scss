@@ -1,0 +1,41 @@
+.sectionItem {
+    width: 40vw;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    align-items: center;
+    
+    .imgContainer{
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    .itemText {
+        position: absolute;
+        text-align: center;
+        width: 20%;
+        height: 20%;
+        background: #fde9f8a6;
+        display: flex;
+        margin: auto;
+        text-transform: uppercase;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        inset: 0;
+    }
+    &:hover {
+        .imgContainer{
+            transform: scale(1.1);
+            transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .itemText{
+            background: #fde9f8d7;
+        }
+    
+    }
+}

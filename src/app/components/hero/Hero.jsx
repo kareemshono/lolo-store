@@ -1,11 +1,13 @@
 "use client"
 import Image from "next/image"
+import { HiShoppingBag } from "react-icons/hi2";
 import styles from "./Hero.module.scss"
-import { Inter } from "next/font/google"
+import { Inter, Raleway } from "next/font/google"
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const inter = Inter({ subsets: ["latin"] })
+
 
 const Hero = () => {
   const [carouselImgs, setCarouselImgs] = useState([
@@ -61,7 +63,9 @@ const Hero = () => {
           woman. 
           Shop our exclusive collection today.
         </p>
-        <button className={`${styles.btn} ${inter.className}`}>Shop Now</button>
+        <button className={`${styles.btn} ${inter.className}`}>
+          <span><HiShoppingBag /></span>
+          Shop Now</button>
       </div>
 
       <div className={styles.colRight}>

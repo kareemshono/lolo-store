@@ -1,0 +1,35 @@
+.execlusiveOffersSection{
+    width: 100vw;
+    height: 100%;
+    .header{
+        width: 100%;
+        text-align: center;
+        h1{
+            font-size: 2.5rem;
+            color: var(--primary-black);
+            margin-bottom: 10px;
+        }
+        p{
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            color: rgba(41, 41, 41, 0.752);
+        }
+        .divider{
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            
+            padding: 0rem 0rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .body {
+        height: 100%;
+       .mySwiper {
+        height: 70vh;
+        width: 100%;
+       }
+    }
+}

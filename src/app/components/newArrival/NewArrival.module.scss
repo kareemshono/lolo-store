@@ -1,0 +1,42 @@
+.arrivalSection {
+    width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    .header{
+        width: 100%;
+        text-align: center;
+        position: relative;
+        h1{
+            color:var(--primary-black);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            
+        }
+        p{
+            color: var(--light-pink);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            color: rgba(41, 41, 41, 0.752);
+           
+        }
+    }
+    .divider{
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        
+        padding: 0rem 0rem;
+        margin-bottom: 2rem;
+    }
+    .body{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
