@@ -1,13 +1,13 @@
 "use client"
+
 import Image from "next/image"
-import { HiShoppingBag } from "react-icons/hi2";
+import { HiShoppingBag } from "react-icons/hi2"
 import styles from "./Hero.module.scss"
 import { Inter, Raleway } from "next/font/google"
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const inter = Inter({ subsets: ["latin"] })
-
 
 const Hero = () => {
   const [carouselImgs, setCarouselImgs] = useState([
@@ -20,7 +20,7 @@ const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0)
   const [direction, setDirection] = useState(1) // To track slide direction
 
-  // Auto switch images every 2 seconds
+  // Auto switch images every 4 seconds
   useEffect(() => {
     const intervalId = setInterval(() => {
       setDirection(1) // slide to the right
@@ -53,20 +53,54 @@ const Hero = () => {
     }),
   }
 
+  // Variants for staggered animation of .colLeft elements
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Delay between children animations
+        delayChildren: 0.5, // Delay before starting stagger
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.42, 0, 0.58, 1], // Smooth easing
+      },
+    },
+  }
+
   return (
     <section className={styles.heroSection}>
-      <div className={styles.colLeft}>
-        <h1 className={styles.title}>For Women</h1>
-        <h3>Best</h3>
-        <p className={styles.subtitle}>
+      <motion.div
+        className={styles.colLeft}
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.h1 className={styles.title} variants={itemVariants}>
+          For Women
+        </motion.h1>
+        <motion.h3 className={styles.best} variants={itemVariants}>Best</motion.h3>
+        <motion.p className={styles.subtitle} variants={itemVariants}>
           Discover the latest trends and timeless pieces, designed for <br /> the modern
-          woman. 
-          Shop our exclusive collection today.
-        </p>
-        <button className={`${styles.btn} ${inter.className}`}>
+          woman. Shop our exclusive collection today.
+        </motion.p>
+        <motion.button
+          className={`${styles.btn} ${inter.className}`}
+          variants={itemVariants}
+        >
           <span><HiShoppingBag /></span>
-          Shop Now</button>
-      </div>
+          Shop Now
+        </motion.button>
+      </motion.div>
 
       <div className={styles.colRight}>
         <div className={styles.carouselContainer}>

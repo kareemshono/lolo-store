@@ -1,0 +1,96 @@
+.footer {
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-black);
+    .row {
+        width: 100vw;
+        display: flex;
+        padding: 2rem;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        .logoCotnainer {
+            width: 30%;
+            box-sizing: border-box;
+            padding-left: 3rem;
+            height: 100%;
+            text-align: start;
+        }
+        .linksCotnainer{
+            width: 35%;
+            height: 100%;
+            color: #f1f1f1f1;
+            h4{
+                margin-bottom: 20px;
+                font-size: 20px;
+            }
+            .list{
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                li{
+                    margin: 10px 0px;
+                }
+            }
+        }
+        .contactContainer{
+            width: 35%;
+            color: #f1f1f1;
+            h4{
+                margin-bottom: 20px;
+                font-size: 20px;
+            }
+            p{
+                margin: 20px 0px;
+            }
+        }
+    }
+    .dividerLine {
+        width: 90%;
+        background: var(--secondary-pink);
+        margin: 0 auto;
+    }
+    .row2{
+        width: 100%;
+        
+        display: flex;
+        align-items: center;
+        .colCopy{
+            width: 50%;
+            color: #f1f1f1;
+            
+           
+            p{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                span{
+                    font-weight: 600;
+                    font-size: 14px;
+                    margin-right: 3px;
+                }
+            }
+        }
+        .colPay {
+            width: 50%;
+            
+            .payList{
+                display: flex;
+                list-style-type: none;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                padding: 0  ;
+            }
+        }
+    }
+   
+    
+}

@@ -1,41 +1,54 @@
-import Image from "next/image";
-import { FaHeart } from "react-icons/fa6";
-import { GrView } from "react-icons/gr";
-import { FaCartPlus } from "react-icons/fa";
+"use client"
 
+import { FaHeart } from "react-icons/fa6"
+import { GrView } from "react-icons/gr"
+import { FaCartPlus } from "react-icons/fa"
+import { motion } from "framer-motion"
+import styles from "./NewArrivalCard.module.scss"
+import { Inter } from "next/font/google"
 
+const inter = Inter({ subsets: ["latin"] })
 
-import styles from "./NewArrivalCard.module.scss";
-import { Inter } from "next/font/google";
-const inter = Inter({subsets:["latin"]})
-const NewArrivalCard = ({id,imgUrl,title,priceRange}) => {
+const NewArrivalCard = ({ id, imgUrl, title, priceRange, sizes, cardVariants }) => {
   return (
-    <div className={styles.cardContainer}>
+    <motion.div
+      className={styles.cardContainer}
+      variants={cardVariants} // Apply animation variants
+    >
       <div className={styles.imgWrapper}>
-      <div style={{backgroundImage:`url(${imgUrl})`}} className={styles.imgContainer}>
-      
-   
-        </div>
+        <div
+          style={{ backgroundImage: `url(${imgUrl})` }}
+          className={styles.imgContainer}
+        ></div>
         <span className={styles.wishHeart}>
-        
-        <FaHeart />
-      </span>
-     <button className={`${styles.cartButton} ${inter.className}`}>
-      <FaCartPlus /> Add To Cart
-     </button>
-      <div className={styles.hoverDiv}>
+          <FaHeart />
+        </span>
+        <button className={`${styles.cartButton} ${inter.className}`}>
+          <FaCartPlus /> Add To Cart
+        </button>
+        <div className={styles.hoverDiv}>
           <p>
-            <span><GrView /></span>
-             Quick View</p>
+            <span>
+              <GrView />
+            </span>
+            Quick View
+          </p>
         </div>
       </div>
-     
-        <div className={styles.text}>
-          <h2>{title}</h2>
-          <p>{priceRange}</p>
+
+      <div className={styles.text}>
+        <div className={styles.left}>
+          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.price}>{priceRange}</p>
         </div>
-    </div>
+        <div className={styles.right}>
+          {sizes?.map((item) => (
+            <p key={item}>{item}</p>
+          ))}
+        </div>
+      </div>
+    </motion.div>
   )
 }
 
-export default NewArrivalCard;
+export default NewArrivalCard

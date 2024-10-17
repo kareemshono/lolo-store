@@ -1,0 +1,51 @@
+.serviceFeaturesSection{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5rem 0rem;
+        font-size: 2rem;
+        text-transform: uppercase;
+    
+    }
+    .row{
+        height: 30vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+        background: var(--primary-black);
+        gap: 20px;
+        .col{
+            display: flex;
+            padding: 3rem 0rem;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            height: 100%;
+            padding: 20px;
+            width: 25%;
+            color: #f1f1f1;
+            cursor: pointer;
+            transition: .3s all ease-in-out;
+            &:hover {
+                background-color: #fc8dd0c6;
+            }
+            h2{
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 14px;
+                opacity: .8;
+            }
+
+        }
+    }
+}

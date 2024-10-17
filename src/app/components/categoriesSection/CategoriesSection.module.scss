@@ -15,28 +15,31 @@
         &:first-child{
             flex-direction: column;
             gap: 20px;
-            .divider{
+            
+               
+            
+                h1 {
+                  color: var(--primary-black);
+                  font-size: 3.5rem; // Slightly larger for better emphasis
+                  margin-bottom: 0rem;
+                  text-transform: uppercase; // Adds a bold, standout look
+                }
+            
+                p {
+                  color: rgba(41, 41, 41, 0.8);
+                  margin-bottom: 2.5rem; // Added more space below for better separation
+                  font-size: 18px; // Slightly larger for better readability
+                  line-height: 1.6; // Better spacing between lines
+                }
+              }
+            
+              .divider {
                 width: 100%;
-                height: 10%;
+                height: 8px; // Adjusted height for a thinner, cleaner divider
                 display: flex;
                 justify-content: center;
-                
-                padding: 0rem 0rem;
-              
-            }
-            h1{
-                color:var(--primary-black);
-                font-size: 2.5rem;
-                
-                
-            }
-            p{
-                color: var(--light-pink);
-               
-                font-size: 1.5rem;
-                color: rgba(41, 41, 41, 0.752);
-               
-            }
+                margin-bottom: 1rem; // More space below for better separation from content
+              }
         }
-    }
+    
 }

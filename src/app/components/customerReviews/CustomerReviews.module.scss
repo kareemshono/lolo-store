@@ -1,0 +1,72 @@
+.customerReviewsSection{
+    width: 100%;
+    padding: 5rem 3rem;
+    .header {
+        position:relative;
+        h1{
+            font-size: 2rem;
+            color: var(--primary-black);
+            margin-bottom: .5rem;
+            text-transform: uppercase;
+            
+        }
+        p{
+            color: #4b4b4b;
+            margin-left: 5px;
+            margin-bottom: 3rem;
+        }
+        .vector{
+            position: absolute;
+            right: 55%;
+            top: -10px;
+            transform: rotate(30deg);
+        }
+    }
+    .mySwiper2{
+
+        .slide {
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border: 1px solid #00000020;
+            border-radius: 15px;
+            .header{
+                width: 100%;
+                padding: 1rem 1rem;
+                display: flex;
+                justify-content: space-between;
+                
+                span{
+                    font-size: 1.5rem;
+                }
+            }
+            .title{
+                width: 100%;
+                padding: 1rem 1rem;
+                text-align: start;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10px;
+                p{
+                    color: #000;
+                    font-size: 20px;
+                    font-weight: 600;
+
+                }
+                .checkIcon{
+                    color: green;
+                }
+            }
+            .text {
+                width: 100%;
+                padding: 0rem 1rem;
+                font-size: 16px;
+                line-height: 30px;
+                color: #676767;
+                text-align: start;
+            }
+        }
+    }    
+}

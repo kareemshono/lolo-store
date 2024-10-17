@@ -1,35 +1,52 @@
 .execlusiveOffersSection{
     width: 100vw;
     height: 100%;
-    .header{
+    .header {
         width: 100%;
         text-align: center;
-        h1{
-            font-size: 2.5rem;
-            color: var(--primary-black);
-            margin-bottom: 10px;
+        position: relative;
+        padding: 3rem 0 1rem; // Adjusted for better spacing around header
+        box-sizing: border-box;
+    
+        h1 {
+          color: var(--primary-black);
+          font-size: 3.5rem; // Slightly larger for better emphasis
+          margin-bottom: 1rem;
+          text-transform: uppercase; // Adds a bold, standout look
         }
-        p{
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-            color: rgba(41, 41, 41, 0.752);
+    
+        p {
+          color: rgba(41, 41, 41, 0.8);
+          margin-bottom: 2.5rem; // Added more space below for better separation
+          font-size: 18px; // Slightly larger for better readability
+          line-height: 1.6; // Better spacing between lines
         }
-        .divider{
-            width: 100%;
-            height: 10%;
-            display: flex;
-            justify-content: center;
-            
-            padding: 0rem 0rem;
-            margin-bottom: 2rem;
-        }
-    }
+      }
+    
+      .divider {
+        width: 100%;
+        height: 8px; // Adjusted height for a thinner, cleaner divider
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem; // More space below for better separation from content
+      }
 
     .body {
         height: 100%;
        .mySwiper {
         height: 70vh;
-        width: 100%;
+        width: 90%;
+        .productDescription{
+            text-align: start;
+            h2{
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 16px;
+            }
+        }
+   
        }
     }
 }
