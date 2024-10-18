@@ -11,9 +11,9 @@ const inter = Inter({ subsets: ["latin"] })
 
 const Hero = () => {
   const [carouselImgs, setCarouselImgs] = useState([
-    { id: 0, img: "/girl-shopping.png" },
-    { id: 1, img: "/girl-shopping2.png" },
-    { id: 2, img: "/girl-shopping4.jpg" },
+    { id: 0, img: "/girl-shopping.webp" },
+    { id: 1, img: "/girl-shopping2.webp" },
+    { id: 2, img: "/girl-shopping4.webp" },
     { id: 3, img: "/girl-shopping3.png" },
   ])
 
