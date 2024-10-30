@@ -3,6 +3,9 @@
     width: 100%;
     display: flex;
     padding: 0 3rem;
+    background-image: url("/bg.svg");
+    background-size: cover;
+    background-position: center;
     
     .colLeft {
       width: 50%;
