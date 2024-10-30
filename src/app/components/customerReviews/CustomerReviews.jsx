@@ -70,7 +70,7 @@ const CustomerReviews = () => {
             </span>
          </div>
          <div className={styles.text}>
-         "Absolutely love the quality of the dresses I ordered! The fabric feels luxurious, and they fit perfectly. NS Fashion has become my go-to for all my fashion needs."
+         &quot;Absolutely love the quality of the dresses I ordered! The fabric feels luxurious, and they fit perfectly. NS Fashion has become my go-to for all my fashion needs.&quot;
          </div>
         </SwiperSlide>
         <SwiperSlide className={styles.slide}>
@@ -85,7 +85,7 @@ const CustomerReviews = () => {
             </span>
          </div>
          <div className={styles.text}>
-         "The fast delivery was a game-changer! I needed a dress last minute, and it arrived within 48 hours. Great service and beautiful collection."
+         &quot;The fast delivery was a game-changer! I needed a dress last minute, and it arrived within 48 hours. Great service and beautiful collection.&quot;
          </div>
         </SwiperSlide>
         <SwiperSlide className={styles.slide}>
@@ -100,7 +100,7 @@ const CustomerReviews = () => {
             </span>
          </div>
          <div className={styles.text}>
-         "The customer service at NS Fashion is top-notch. They helped me pick out the perfect outfit for a wedding, and I received so many compliments! Highly recommend."
+         &quot;The customer service at NS Fashion is top-notch. They helped me pick out the perfect outfit for a wedding, and I received so many compliments! Highly recommend.&quot;
          </div>
         </SwiperSlide>
         <SwiperSlide className={styles.slide}>
@@ -115,7 +115,7 @@ const CustomerReviews = () => {
             </span>
          </div>
          <div className={styles.text}>
-         "I’m obsessed with their exclusive offers! Got my hands on a beautiful summer dress at a great discount. The quality is impressive, and it looks even better in person."
+         &quot;I’m obsessed with their exclusive offers! Got my hands on a beautiful summer dress at a great discount. The quality is impressive, and it looks even better in person.&quot;
          </div>
         </SwiperSlide>
         <SwiperSlide className={styles.slide}>
@@ -130,7 +130,7 @@ const CustomerReviews = () => {
             </span>
          </div>
          <div className={styles.text}>
-         "I’ve never had a better online shopping experience. From secure payment options to seamless delivery, NS Fashion really knows how to make their customers happy. Will be shopping again!"
+         &quot;I’ve never had a better online shopping experience. From secure payment options to seamless delivery, NS Fashion really knows how to make their customers happy. Will be shopping again!&quot;
          </div>
         </SwiperSlide>
         <SwiperSlide className={styles.slide}>
@@ -145,7 +145,7 @@ const CustomerReviews = () => {
             </span>
          </div>
          <div className={styles.text}>
-         "The trendy designs at NS Fashion keep me coming back. Their styles are always on point, and the quality is unmatched. Love my new fall collection pieces!"
+         &quot;The trendy designs at NS Fashion keep me coming back. Their styles are always on point, and the quality is unmatched. Love my new fall collection pieces!&quot;
          </div>
         </SwiperSlide>
        
