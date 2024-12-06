@@ -24,7 +24,7 @@ const handleChange = (e) => {
        <div className={styles.formContainer}>
             <p>Welcome Back</p>
             <h1>Sign In To Your Account</h1>
-            <p>You don't have an account yet ? <Link href="/login">Sign Up</Link></p>
+            <p>You don&apos;t have an account yet ? <Link href="/login">Sign Up</Link></p>
             <form action="#" className={styles.form}>
                 <div className={styles.formGroup}>   
                     <label htmlFor="name"  className={styles.formLabel}>

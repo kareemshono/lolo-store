@@ -29,7 +29,7 @@ const ShopCollectionItem = ({id,name,img_url,price,sizes}) => {
             </div>
             <div className={styles.colRight}>
                 {sizes?.map((size) => {
-                    return <span>{size}</span>
+                    return <span key={size}>{size}</span>
                                   })}
             </div>
         </div>
