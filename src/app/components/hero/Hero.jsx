@@ -103,7 +103,7 @@ const Hero = () => {
       </motion.div>
 
       <div className={styles.colRight}>
-        <div className={styles.carouselContainer}>
+        {/* <div className={styles.carouselContainer}>
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
               key={carouselImgs[currentImage].id}
@@ -124,7 +124,9 @@ const Hero = () => {
               />
             </motion.div>
           </AnimatePresence>
-        </div>
+        </div> */}
+{/* <Image src={"/newbanner.jpg"} width={700} height={450}/> */}
+
       </div>
     </section>
   )

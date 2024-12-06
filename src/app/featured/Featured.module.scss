@@ -1,0 +1,69 @@
+.featuredContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+   flex-direction: column;
+
+   .header {
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .5)),url("/featuredBg.webp");
+    background-size: cover;
+    background-position:center ;
+    .featuredBanner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .title{
+            font-size: 4.5rem;
+            letter-spacing: 15px;
+            color: #f1f1f1; 
+        }
+    }
+   }
+   .body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0rem 5rem;
+    .colRight{
+        h1{
+            margin-bottom: 20px;
+           
+        } p{
+            line-height: 25px;
+            font-weight: 300;
+            span{
+                font-weight: bold;
+                
+            }
+        }
+    }
+    .row{
+        padding: 1rem;
+    }
+    .mySwiper2 {
+        height: 80vh;
+        width: 90%;
+        .productDescription{
+            text-align: start;
+            padding: 1rem;
+            h2{
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+   
+       }
+   }
+    
+}

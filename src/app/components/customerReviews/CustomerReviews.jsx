@@ -39,7 +39,7 @@ const CustomerReviews = () => {
         <motion.div variants={containerVariants} className={styles.header}>
             <motion.h1 variants={itemVariants}>Our Customers Reviews</motion.h1>
             <motion.p variants={itemVariants}>Hear What Our Customers Say About Us:</motion.p>
-            <Image className={styles.vector} src="/reviewVector.svg" height={75} width={150} alt='vector' />
+            {/* <Image className={styles.vector} src="/reviewVector.svg" height={75} width={150} alt='vector' /> */}
         </motion.div>
         <div className={styles.body}>
         <Swiper

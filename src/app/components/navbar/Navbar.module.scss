@@ -1,16 +1,20 @@
 .navContainer {
     width: 100vw ;
-    height: 100%;
+    height: 100px;
+    position: fixed;
+    inset: 0;
+    z-index: 9;
     box-sizing: border-box;
     display: flex;
-   
+    transition: .3s all ease-in-out;
     justify-content: space-between;
-    padding: 2rem 4rem;
+    padding: 1rem 4rem;
+    
     .logo{
         width: 20%;
         display: flex;
         align-items: center;
-
+        padding: 0rem 1rem;
         
     }
     .navbar {
@@ -76,16 +80,28 @@
             font-size:16px;
             padding: 10px 0px;
             font-weight: 500;
+            text-transform: uppercase;
+            color: #f1f1f1;
             border-bottom: 2.5px solid transparent;
             transition: .3s all ease-in-out;
             
 
             &:hover {
-                border-color: var(--primary-pink);
+                border-color: #9E816F;
             }
            }
         }
         }
     }
 
+}
+.transparent{
+  background-color: transparent;
+}
+.scrolled {
+  background-color: #171517;
+}
+
+.cartIcon {
+  font-size: 1.5rem;
 }
