@@ -1,0 +1,176 @@
+.productModal{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    z-index: +9;
+    
+    background-color: rgba(0, 0, 0, 0.281);
+    .productContainer{
+        width: 85%;
+        height: 85%;
+        background: #f1f1f1;
+        border-radius: 10px;
+        padding: 1rem;
+        display: flex;
+        position: relative;
+        align-items: center;
+        .colLeft {
+            height: 100%;
+            
+            width: 40%;
+            display: flex;
+            padding: 2rem;
+            align-items: center;
+            justify-content: center; 
+            border-right: 1px solid #33333370;
+            .stockStatus{
+                width: 15%;
+                height: 7%;
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                position: absolute;
+                top: 0%;
+                left: 12%;
+                
+                span{
+                    font-size: 25px;
+                    font-weight: bold;
+                    padding: 5px 20px;
+                }
+            }
+            .available{
+                background: green;
+            }
+            .outOfStock{
+                background: red;
+            }
+            img{
+                border-radius: 10px;
+            }
+        }
+        .colRight{
+            height: 100%;
+            width: 60%;
+            padding: 2rem 2rem;
+            margin-top: 1rem;
+            position: relative;
+            .closeIcon{
+                position: absolute;
+                top: 3%;
+                right: 3%;
+                font-size: 1.3rem;
+                cursor: pointer;
+            }
+            .categoryPath{
+                padding-top: .5rem;
+                margin-bottom: 1rem;
+                font-size: 18px;
+                span{
+                    color: #7e7e7e;
+                }
+            }
+            .title{
+                font-size: 2rem;
+                margin: .5rem 0rem;
+               
+            }
+            .miniDescription {
+                margin-bottom: 2rem;
+                color: #4b4b4b;
+            }
+
+            .rate{
+                margin-top: 1rem;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+            .categoryColorFilter {
+                .title{
+                    color: #252525;
+                    font-weight: bold;
+                }
+                p{
+                    padding: 10px 0px;
+                    color: #9E816F;
+                   font-size: 20px;
+                   margin-top: 5px;
+                   margin-bottom: 5px;                   
+                }
+                margin-bottom: 1rem;
+            }
+            .categorySizeFilter{
+                .title{
+                    color: #252525;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+                margin-bottom: 1rem;
+                p{
+                    padding: 5px 0px;
+                    color: #252525;
+                   font-size: 16px;
+                   margin-top: 5px;
+                   margin-bottom: 10px;  
+                    
+                }
+            }
+            .btns{
+                width: 100%;
+                margin-top: 3rem;
+                padding: 1rem 0rem;
+                display: flex;
+                gap: 20px;
+                button{
+                    padding: 15px 35px; // More padding for a better feel
+       
+        background: transparent;
+        color: #000;
+        border: 2px solid #000000;;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px; // Adjusted gap for better alignment
+        outline: none;
+        width: 40%; // Slightly wider for more emphasis
+        font-size: 18px; // Slightly larger for better readability
+        // More rounded corners for a modern look
+        font-weight: 600;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-shadow: 0px 0px 5px #0000001a;
+        transition: all 0.3s ease; // Smooth transition for hover effects
+        &:hover {
+          background-color: #000;
+          color: #fff;
+          transform: translateY(-2px)!important; // Lift the button slightly on hover
+        }
+                }
+                .addToCart{
+                    background-color: #000;
+                    color: #fff;
+                    &:hover{
+                        background-color: transparent;
+                        color: #000;
+                    }
+                }
+                .viewMore{
+                    background-color: transparent;
+                    color: #000;
+                    &:hover{
+                        background-color: #000;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}

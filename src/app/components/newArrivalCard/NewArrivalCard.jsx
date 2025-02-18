@@ -6,10 +6,13 @@ import { FaCartPlus } from "react-icons/fa"
 import { motion } from "framer-motion"
 import styles from "./NewArrivalCard.module.scss"
 import { Inter } from "next/font/google"
+import { useDispatch } from "react-redux"
+import { toggleModal } from "@/redux/slices/productModal/productModalSlice"
 
 const inter = Inter({ subsets: ["latin"] })
 
-const NewArrivalCard = ({ id, imgUrl, title, priceRange, sizes, cardVariants }) => {
+const NewArrivalCard = ({ id, imgUrl, title, priceRange, sizes, cardVariants,item }) => {
+  const dispatch = useDispatch()
   return (
     <motion.div
       className={styles.cardContainer}
@@ -27,7 +30,7 @@ const NewArrivalCard = ({ id, imgUrl, title, priceRange, sizes, cardVariants }) 
           <FaCartPlus /> Add To Cart
         </button>
         <div className={styles.hoverDiv}>
-          <p>
+          <p onClick={() => dispatch(toggleModal(true))}>
             <span>
               <GrView />
             </span>

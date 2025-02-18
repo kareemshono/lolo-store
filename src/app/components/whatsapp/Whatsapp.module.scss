@@ -1,0 +1,44 @@
+@mixin mobile {
+    @media screen and (max-width: 576px) {
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media screen and (min-width: 600px) and (max-width: 1100px) {
+      @content;
+    }
+  }
+.whatsappContainer{
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    width: 60px;
+    height: 60px;
+    z-index: 9;
+    background: var(--primary-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+   transition: all .5s ease-in-out;
+   @include mobile {
+    width: 45px;
+    height: 45px;
+    right: 5%;
+   }
+    .whatsappIcon {
+        color: #fff;
+        font-size: 1.9rem;
+        margin-left: 2px;  
+        @include mobile {
+          font-size: 1.5rem;
+          margin: 0;
+           }
+    }
+    &:hover{
+        background: #C99846;
+    }
+}

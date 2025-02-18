@@ -37,7 +37,7 @@ const CustomerReviews = () => {
   return (
     <section className={styles.customerReviewsSection}>
         <motion.div variants={containerVariants} className={styles.header}>
-            <motion.h1 variants={itemVariants}>Our Customers Reviews</motion.h1>
+            <motion.h1 variants={itemVariants}>Our <span>Customers</span>  Reviews</motion.h1>
             <motion.p variants={itemVariants}>Hear What Our Customers Say About Us:</motion.p>
             {/* <Image className={styles.vector} src="/reviewVector.svg" height={75} width={150} alt='vector' /> */}
         </motion.div>

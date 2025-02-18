@@ -5,6 +5,8 @@ import styles from "./NewArrival.module.scss"
 import { newArrivalData } from "./newArrivalData"
 import NewArrivalCard from "../newArrivalCard/NewArrivalCard"
 import { motion } from "framer-motion"
+import { useSelector } from "react-redux"
+import ProductModal from "../productModal/ProductModal"
 
 // Animation variants for the parent container
 const containerVariants = {
@@ -33,6 +35,7 @@ const cardVariants = {
 }
 
 const NewArrival = () => {
+  const showModal = useSelector(state => state.productModal.showModal) 
   return (
     <section className={styles.arrivalSection}>
       <motion.div
@@ -42,7 +45,7 @@ const NewArrival = () => {
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <motion.h1 variants={cardVariants}>New arrivals</motion.h1>
+        <motion.h1 variants={cardVariants}><span>New</span> arrivals</motion.h1>
         <motion.p variants={cardVariants}>
           Collection of new arriving clothes
         </motion.p>
@@ -66,10 +69,12 @@ const NewArrival = () => {
             imgUrl={item.imgUrl}
             priceRange={item.priceRange}
             sizes={item.sizes}
+            item={item}
             cardVariants={cardVariants} // Pass variants to each card
           />
         ))}
       </motion.div>
+      {showModal ? <ProductModal/> :""}
     </section>
   )
 }

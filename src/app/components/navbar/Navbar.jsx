@@ -1,12 +1,17 @@
-"use client"
+"use client";
 import Link from "next/link";
 import { BsBag } from "react-icons/bs";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation"; // Import hook for current path
 import styles from "./Navbar.module.scss";
 import Image from "next/image";
+import Cart from "../cart/Cart";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [toggleCart, setToggledCart] = useState(false);
+  const [hamToggled, setHamToggled] = useState(false);
+  const pathname = usePathname(); // Get current path
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,9 +30,14 @@ const Navbar = () => {
 
   return (
     <div
-      className={`${styles.navContainer} ${
+      className={`${styles.navContainer}
+       ${
+        hamToggled ? `${styles.navToggled}` : ""
+      }
+      ${
         scrolled ? styles.scrolled : styles.transparent
       }`}
+      style={{ backgroundColor: pathname === "/checkout" ? "#171517" : "" }}
     >
       <div className={styles.logo}>
         <Link href="/">
@@ -35,7 +45,8 @@ const Navbar = () => {
         </Link>
       </div>
       <nav className={styles.navbar}>
-        <button className={styles.hamBtn}>
+        <button onClick={() => setHamToggled(!hamToggled)}
+            className={`${styles.hamBtn} ${hamToggled ? `${styles.isActive}` : ""}`}>
           <span></span>
           <span></span>
           <span></span>
@@ -77,12 +88,17 @@ const Navbar = () => {
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/" className={styles.navLink}>
+            <Link
+              onClick={() => setToggledCart(!toggleCart)}
+              href="#"
+              className={styles.navLink}
+            >
               <BsBag className={styles.cartIcon} />
             </Link>
           </li>
         </ul>
       </nav>
+      {toggleCart ? <Cart handleToggle={setToggledCart} /> : ""}
     </div>
   );
 };

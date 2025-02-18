@@ -31,13 +31,14 @@
         align-items: center;
         .formContainer{
             width: 70%;
+            height: 70%;
             display: flex;
             border: 1px solid #0000002e;
             .colLeft{
                 width: 50%;
-                padding: 1.5rem 3rem;
+                padding: 2.5rem 3rem;
                 h2{
-                    margin-bottom: 30px;
+                    margin-bottom: 3rem;
                     text-align: center;
                 }
                 .formGroup{

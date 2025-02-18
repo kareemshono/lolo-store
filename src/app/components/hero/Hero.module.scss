@@ -1,3 +1,14 @@
+@mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @content;
+  }
+}
 .heroSection {
     // height: calc(100vh - 150px);
     height: 100vh;
@@ -6,9 +17,16 @@
     padding: 0 3rem;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, .2)),url("/newbanner.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     
-    
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 5rem 0rem;
+    }
     .colLeft {
       width: 50%;
       display: flex;
@@ -23,21 +41,24 @@
       .title {
         font-size: 4rem; // Adjusted for better readability
         margin-bottom: 1.5rem;
-        margin-top: 2rem;
+  
         color: #f1f1f1;
         text-transform: uppercase;
         line-height: 1.2; // Better spacing between lines
+       
       }
   
     .best {
-        color: #9E816F;
-        position: absolute;
-        top: 26%; // Moved up slightly for better positioning
-        z-index: 0;
+        color: #c99946;
+        
+      
         font-size: 4.5rem; // Bigger to stand out more as background text
-        margin-bottom: 0.5rem;
+        
         text-transform: uppercase;
         opacity: 0.7!important; // Lower opacity for a more subtle effect
+        @include mobile {
+         font-size: 4rem; 
+        }
       }
   
       .subtitle {
@@ -46,11 +67,14 @@
         margin-bottom: 2rem; // Added more space below subtitle for better flow
         font-size: 16px; // Slightly larger for better readability
         opacity: 0.85;
+        @include mobile {
+          font-size: 1.2rem;
+        }
       }
   
       .btn {
         padding: 15px 35px; // More padding for a better feel
-        border-color:#9E816F;
+        border-color:#ffffff;
         background: transparent;
         color: #fff;
         border: 2px solid;
@@ -68,9 +92,15 @@
         cursor: pointer;
         transition: all 0.3s ease; // Smooth transition for hover effects
         &:hover {
-          background-color: darken(#9e816f4d, 5%);
+          background-color: darken(#c99946, 20%);
           transform: translateY(-2px)!important; // Lift the button slightly on hover
         }
+        @include mobile {
+          width: 100%;
+        }
+      }
+      @include mobile {
+        width: 100%;
       }
     }
   
@@ -81,12 +111,10 @@
       justify-content: center;
       align-items: center;
       padding: 1.5rem; // Added some padding for better alignment
-  
-      .carouselContainer {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        max-width: 90%; // Restrict width for better content fit
+ 
+      @include mobile {
+        width: 100%;
+        height: 0%;
       }
     }
   }

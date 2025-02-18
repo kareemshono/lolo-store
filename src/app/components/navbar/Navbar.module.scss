@@ -1,3 +1,14 @@
+@mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @content;
+  }
+}
 .navContainer {
     width: 100vw ;
     height: 100px;
@@ -8,7 +19,7 @@
     display: flex;
     transition: .3s all ease-in-out;
     justify-content: space-between;
-    padding: 1rem 4rem;
+    padding: 4rem;
     
     .logo{
         width: 20%;
@@ -19,10 +30,8 @@
     }
     .navbar {
        width: 80%; 
-        
         display: flex;
         justify-content: flex-end;
-       
         align-items: center;
        .hamBtn {
         display: none;
@@ -31,14 +40,14 @@
         outline: none;
         background: none;
         margin-right: 2rem;
-        z-index: 8;
+        z-index: 9;
         cursor: pointer;
-          
+       
         span {
             display: block;
             height: 3px;
             width: 25px;
-            background-color: var(--primary-navy);
+            background-color: #fff;
             border-radius: 0.2rem;
             margin-bottom: 5px;
             transform-origin: 0 0;
@@ -47,13 +56,13 @@
     
           &:hover :nth-child(2) {
             transform: translateX(10px);
-            background-color: var(--primary-yellow);
+            background-color: #c99946;
           }
         }
     
         .hamBtn.isActive span:nth-child(1) {
           transform: translate(2px, -4px) rotate(45deg);
-          background-color: var(--primary-navy);
+          background-color: #fff;
         }
     
         .hamBtn.isActive span:nth-child(2) {
@@ -63,7 +72,7 @@
     
         .hamBtn.isActive span:nth-child(3) {
           transform: translate(-1px, -3px) rotate(-45deg);
-          background-color: var(--primary-navy);
+          background-color: #fff;
         
 
        }
@@ -74,7 +83,11 @@
         align-items: center;
         gap: 40px;
         padding: 0;
+        
         margin: 0;
+        @include mobile {
+      display: none;    
+        }
         li{
            .navLink {
             font-size:16px;
@@ -84,8 +97,6 @@
             color: #f1f1f1;
             border-bottom: 2.5px solid transparent;
             transition: .3s all ease-in-out;
-            
-
             &:hover {
                 border-color: #9E816F;
             }
@@ -99,9 +110,75 @@
   background-color: transparent;
 }
 .scrolled {
-  background-color: #171517;
+  background: var(--primary-black);
 }
 
 .cartIcon {
   font-size: 1.5rem;
+}
+
+  
+@media only screen and (max-width: 760px) {
+  .navContainer {
+    padding: .5rem;
+    
+    .navbar {
+      width: 100%;
+      
+      justify-content: center;    
+     
+      .hamBtn {
+  
+        display: block ;
+          position: fixed;
+          right: 0;
+          top: 5%;
+        
+      }
+  
+    }
+    .logo{
+      position: fixed;
+      top: 3%;
+      left: 3%;
+      
+      
+    }
+  
+   
+  }
+ 
+  .navContainer.navToggled {
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    z-index: 9;
+    background: rgba(29, 29, 29, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    inset: 0;
+
+   
+
+    .logo {
+      position: absolute;
+      top: 1%;
+      left: 2%;
+      z-index: 9;
+    }
+
+    .navList {
+      display: flex;
+      flex-direction: column;
+
+      .navItem {
+        margin-top: 0.9rem;
+      }
+    }
+  }
+
+
 }

@@ -43,7 +43,7 @@ const ExeclusiveOffers = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }} // Trigger animation when 30% of the element is in view
         className={styles.header}>
-            <motion.h1 variants={itemVariants}>Execlusive Offers</motion.h1>
+            <motion.h1 variants={itemVariants}> <span>Execlusive</span> Offers</motion.h1>
             <motion.p variants={itemVariants}>Unwrap the Best Deals: Exclusive Offers on Trendy Women&lsquo;s Fashion.</motion.p>
             <div className={styles.divider}>
             <Image src={"/divider.svg"} width={200} height={50} alt="vector"/>

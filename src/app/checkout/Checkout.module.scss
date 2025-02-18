@@ -1,0 +1,425 @@
+.checkoutPage {
+    width: 100vw;
+    height:100%;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    .checkoutContainer{
+        box-sizing: border-box;
+        width: 80%;
+       height: 100%;
+        margin-top: 3rem;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        .formContainer{
+            height: 100%;
+            display: flex;
+           padding: 1rem;
+
+            .form{
+                height: 100%;
+                width: 65%;
+                border-right: 1px solid #9f792865;
+            }
+            .colSummary{
+                width: 35%;
+                height: 100%;
+                padding: 3rem;
+                margin-left: 1rem;
+                margin-top: 2rem;
+                display: flex;
+                gap: 20px;
+                flex-direction: column;
+                background: #c4c4c45b;
+                border-radius: 10px;
+                .summaryTitle{
+                        color: #000;
+                }
+                .row{
+                    width: 100%;
+                    margin-top: 10px;
+                    .colLeft,.colRight {
+                        p{
+                            margin: 1rem 0rem;
+                            color: #333333;
+                        }
+                    }
+                    .colLeft {
+                        p{
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .stepper{
+        width: 100%;
+        height: 35%;
+        
+        padding: 1rem;
+        display: flex;
+        gap: 2px;
+        justify-content: center;
+       
+        .step1,.step2,.step3{
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+            gap: 10px;
+        
+          width: 32%;
+          cursor: pointer;
+          padding: 1rem;
+          span{
+            box-sizing: border-box;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+          }
+            .nonActive{
+                background-color: #f1f1f1;
+                border: 1px solid #FFD700;
+                width: 30px;
+                height: 30px;
+                font-weight: bold;
+                display: flex;
+                color: #000;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+            p{
+                color: #000;
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+   
+    .paymentDetails{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        
+        .cardType {
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        .header{
+            padding: 0.5rem 1rem;
+            color: #fff;
+            margin-top: 1.5rem;
+            h2{
+               font-size: 1.3rem;
+            }
+            hr{
+                background:#ffffffb7;
+            }
+        }
+    
+    }
+    .header{
+        padding: 1rem 4rem;
+        color: #fff;
+        background: rgb(57,43,23);
+            background: linear-gradient(62deg, rgba(57,43,23,1) 0%, rgba(201,152,70,1) 100%);
+     
+    }
+
+    .form{
+        padding: 2rem 3rem;
+       
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        ::placeholder {
+            color: rgba(12, 12, 12, 0.514);
+            opacity: 1; /* Firefox */
+          }
+          
+          ::-ms-input-placeholder { /* Edge 12 -18 */
+            color: rgba(255, 255, 255, 0.705);
+          }
+    }
+    .half{
+        width: 45%;
+    }
+    .full{
+        width: 90%;
+    }
+    .detailsRevContainer{
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        border-radius: 15px;
+        background: #c4c4c45b;
+        p{
+            margin: 15px 0px;
+            color: #000000;
+            font-size: 18px;
+            font-weight: 600;
+            span{
+                background-color: #5d4a1f49;
+                border-radius: 5px;
+                padding: 5px;
+                font-weight: normal;
+                letter-spacing: 1.5px;
+                font-size: 16px!important;
+            }
+        }
+    }
+    .formGroup{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin: .3rem 0rem;
+       
+        .formLabel {
+            color: #000;
+            font-weight: 600;
+            
+        }
+        .formControl{
+            height: 25px;
+            padding: 10px;
+         
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #000;
+            font-size: 16px;
+            color: #000;
+            &:focus{
+                border-color: #9E816F;
+            }
+        }
+        .formSelect{
+            height: 30px;
+           
+            border: none;
+            outline: none;
+            border-bottom: 3px solid transparent;
+            font-size: 16px;
+            background-color: #d1d1d1cc;
+            color: #000000;
+            &:focus{
+                border-color: #9E816F;
+            }
+        }
+        
+    }
+    .paymentType {
+        padding:  0.5rem 0rem 0rem 0rem;
+    
+    }
+    .row{
+        display: flex;
+        justify-content: space-between;
+        p{
+            color: #f1f1f1;
+        }
+        span{
+            color: #f1f1f1;
+            font-weight: 200;
+        }
+        .btn {
+            padding: 10px 25px; // More padding for a better feel
+            border-radius: 5px;
+            background: #000;
+            border: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            border: 1px solid transparent;
+            outline: none;
+            width: 100%; // Slightly wider for more emphasis
+            font-size: 16px; // Slightly larger for better readability
+            margin-top: 1.5rem;
+            // More rounded corners for a modern look
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-sizing: border-box;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            text-transform: uppercase;
+            .nextArrow {
+                font-size:2rem;
+            }
+         
+            cursor: pointer;
+            transition: all 0.3s ease; // Smooth transition for hover effects
+            &:hover {
+                border-color: #000;
+                color: #000;
+              background-color: transparent;
+              transform: translateY(-2px)!important; // Lift the button slightly on hover
+            }
+            &:disabled {
+                background-color: #cccccc;
+                color: #666666;
+                cursor: not-allowed;
+              }
+        }
+        .btnBack {
+            padding: 10px 25px; // More padding for a better feel
+            border-radius: 5px;
+            background: rgba(201,152,70,1);
+            border: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            outline: none;
+            width: 100%; // Slightly wider for more emphasis
+            font-size: 16px; // Slightly larger for better readability
+            margin-top: 1.5rem;
+            // More rounded corners for a modern look
+            font-weight:600;
+            box-sizing: border-box;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            text-transform: uppercase;
+     
+            .backArrow {
+                font-size:1.8rem;
+            }
+            cursor: pointer;
+            transition: all 0.3s ease; // Smooth transition for hover effects
+            &:hover {
+              background-color: darken(rgba(201,152,70,1), 5%);
+              transform: translateY(-2px)!important; // Lift the button slightly on hover
+            }
+        }
+    }
+    .cardsRow{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+
+        .payList{
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            margin: 1rem 0rem;
+            padding: 1rem 0rem;
+            
+            li{
+                height: 100%;
+                display: flex;
+                padding: .1rem;
+                justify-content: center;
+                cursor: pointer;
+                align-items: flex-end;
+                    img{
+                        border-radius: 10px;
+                        background: #b1b1b1a4;
+                    }
+            }
+        }
+    }
+}
+
+.active{
+    // background-color: #52b202;
+    background-color: #ff9800;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.fulfilled{
+       background-color: #52b202;
+       color: #fff;
+       width: 30px;
+       height: 30px;
+       font-weight: bold;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       border-radius: 50%;
+}
+.failed{
+    background-color: #f44336;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.btns {
+    width: 75%;
+    margin-top: 1rem;
+    display: flex;
+    gap: 10px;
+}
+
+.btnDisabled {
+    padding: 10px 25px; // More padding for a better feel
+    border-radius: 5px;
+
+    border: none;
+    color: #636363;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    outline: none;
+    width: 100%; // Slightly wider for more emphasis
+    font-size: 16px; // Slightly larger for better readability
+    margin-top: 1.5rem;
+    // More rounded corners for a modern look
+    font-weight:600;
+    box-sizing: border-box;
+
+    text-transform: uppercase;
+}
+
+.shopIcon {
+    font-size:2rem;
+}
+.btns100{
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    gap: 10px;
+    .btn100 {
+        background: rgb(57,43,23);
+        background: linear-gradient(62deg, rgba(57,43,23,1) 0%, rgba(201,152,70,1) 100%);
+        padding: 10px 25px; // More padding for a better feel
+        border-radius: 5px;
+    
+        border: none;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        outline: none;
+        width: 100%; // Slightly wider for more emphasis
+        font-size: 16px; // Slightly larger for better readability
+        margin-top: 1.5rem;
+        // More rounded corners for a modern look
+        font-weight: 600;
+       
+        box-sizing: border-box;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        text-transform: uppercase;
+     
+        cursor: pointer;
+        transition: all 0.3s ease; // Smooth transition for hover effects
+        &:hover {
+          background-color: darken(#9f826f, 5%);
+          transform: translateY(-2px)!important; // Lift the button slightly on hover
+        }
+    }
+}

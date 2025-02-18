@@ -14,11 +14,7 @@ const Footer = () => {
         <div className={styles.linksCotnainer}>
             <h4>Links</h4>
             <ul className={styles.list}>
-                <li>
-                    <Link href="" >
-                    Home
-                     </Link>
-                </li>
+             
                 <li>
                     <Link href="" >
                     Shop
@@ -44,6 +40,11 @@ const Footer = () => {
                     Sign In
                      </Link>
                 </li>
+                <li>
+                    <Link href="" >
+                    Privacy Policy
+                     </Link>
+                </li>
             </ul>
         </div>
         <div className={styles.contactContainer}>
@@ -60,7 +61,7 @@ const Footer = () => {
         <hr className={styles.dividerLine} />
         <div className={styles.row2}>
         <div className={styles.colCopy}>
-           <p><span>NS - Store </span> <LuCopyright />   2024. All Rights Reserved.</p> 
+           <p><span>NS - Store </span> <LuCopyright />   2025. All Rights Reserved.</p> 
         </div>
         <div className={styles.colPay}>
             <ul className={styles.payList}>
