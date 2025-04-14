@@ -1,17 +1,22 @@
 const db = require('./index');
 
 // Add a new user
-async function addUser({ name, email, password, phone, is_admin, created_at }) {
+async function addUser({ name, email, hashedPassword, phone,role, is_admin, created_at }) {
     const query = `
-        INSERT INTO site_user (name, email, password, phone, is_admin, created_at)
-        VALUES ($1, $2, $3, $4, $5, $6)
+        INSERT INTO site_user (name, email, password,  phone, role, is_admin, created_at)
+        VALUES ($1, $2, $3, $4, $5, $6,$7)
         RETURNING *;
     `;
-    const values = [name, email, password, phone, is_admin, created_at];
+    const values = [name, email, hashedPassword, phone, role , is_admin, created_at];
     const result = await db.query(query, values);
     return result.rows[0];
 }
-
+//get a user by email -- login
+async function getUserByEmail(email) {
+    const query = `SELECT * FROM site_user WHERE email = $1`;
+    const result = await db.query(query, [email]);
+    return result.rows[0];
+}
 // Get all users
 async function getAllUsers() {
     const query = 'SELECT * FROM site_user;';
@@ -20,11 +25,11 @@ async function getAllUsers() {
 }
 
 // Get a user by ID
-async function getUserById(userId) {
-    const query = 'SELECT * FROM site_user WHERE id = $1;';
-    const result = await db.query(query, [userId]);
-    return result.rows[0];
-}
+// async function getUserById(userId) {
+//     const query = 'SELECT * FROM site_user WHERE id = $1;';
+//     const result = await db.query(query, [userId]);
+//     return result.rows[0];
+// }
 
 // Update a user by ID
 async function updateUser(userId, { name, email, phone }) {
@@ -49,7 +54,7 @@ async function deleteUser(userId) {
 module.exports = {
     addUser,
     getAllUsers,
-    getUserById,
+    getUserByEmail,
     updateUser,
     deleteUser,
 };

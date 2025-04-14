@@ -44,9 +44,10 @@
                 }
             }
             .categoryListFilter{
+                margin: 1rem 0;
                 p{
                     padding: 10px 0px;
-                    color: #9E816F;
+                    color: #554023;
                    font-size: 20px;
                     
                 }
@@ -62,10 +63,35 @@
                     }
                 }
             }
+            .selectGroup{
+                display: flex;
+                gap: 10px;
+                margin:10px 0px;
+            }
+            .selectLabel {
+                display: flex;
+                cursor: pointer;
+                gap: 10px;
+                &:hover{
+                    span{
+                        opacity: .8;
+                    }
+                }
+                span{
+                    font-weight: 500;
+                    font-size: 1.1rem;
+                    color: #2e2e2e;
+                    text-transform: capitalize;
+                }
+                input {
+                    font-size: 1.2rem;
+                }
+            }
             .categoryColorFilter {
+                margin: 1rem 0;
                 p{
                     padding: 10px 0px;
-                    color: #9E816F;
+                    color: #554023;
                    font-size: 20px;
                    margin-top: 5px;
                    margin-bottom: 10px;                   
@@ -73,9 +99,10 @@
             }
 
             .categorySizeFilter{
+                margin: 1rem 0;
                 p{
-                    padding: 10px 0px;
-                    color: #9E816F;
+                    
+                    color: #554023;
                    font-size: 20px;
                    margin-top: 5px;
                    margin-bottom: 10px;  
@@ -83,9 +110,10 @@
                 }
             }
             .categoryPriceFilter{
+                margin: 1rem 0;
                 p{
                     padding: 10px 0px;
-                    color: #9E816F;
+                    color: #554023;
                    font-size: 20px;
                    margin-top: 5px;
                    margin-bottom: 10px;  
@@ -103,3 +131,50 @@
         }
     }
 }
+.colorContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .colorCircle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 0px 10px #0000000e;
+  }
+  
+  .colorCircle.selected {
+    border: 3px solid rgb(56, 56, 56); /* Highlight selected color */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .sizeContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .sizeBox {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #00000030;
+    padding: 5px 5px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .sizeBox.selected {
+    background-color: black; /* Highlight selected size */
+   
+    border: 2px solid black;
+
+    p{
+        color: #fff!important;
+    }
+  }

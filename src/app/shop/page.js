@@ -6,17 +6,86 @@ import { motion } from "framer-motion";
 import styles from "./Shop.module.scss";
 import ShopCollection from "../components/shopCollection/ShopCollection";
 import { Inter } from "next/font/google";
-
+import { products } from "../components/shopCollection/productsDummyData";
 const colors = ["lightpink", "skyblue", "green", "mediumorchid", "lightgrey"];
+const categories = ["dresses","abaya","shirts","skirts"]
 const sizes = ["xs", "s", "m", "l"];
-const inter = Inter({ subsets: ["latin"] });
 
+
+const inter = Inter({ subsets: ["latin"] });
+const ColorFilter = ({ colors, selectedColors, handleColorChange }) => {
+  return (
+    <div className={styles.categoryColorFilter}>
+      <p>By color</p>
+      <div className={styles.colorContainer}>
+        {colors.map((color) => (
+          <div
+            key={color}
+            onClick={() => handleColorChange(color)}
+            className={`${styles.colorCircle} ${
+              selectedColors.includes(color) ? styles.selected : ""
+            }`}
+            style={{ backgroundColor: color }}
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
+};
+const SizeFilter = ({ sizes, selectedSizes, handleSizeChange }) => {
+  return (
+    <div className={styles.categorySizeFilter}>
+      <p>By size</p>
+      <div className={styles.sizeContainer}>
+        {sizes.map((size) => (
+          <div
+            key={size}
+            onClick={() => handleSizeChange(size)}
+            className={`${styles.sizeBox} ${
+              selectedSizes.includes(size) ? styles.selected : ""
+            }`}
+          >
+            <p>{size}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 const Shop = () => {
   const [value, setValue] = React.useState([20, 37]);
-
+  const [productsData,setProductsData] = React.useState(products)
+  const [selectedCategories, setSelectedCategories] = React.useState([]);
+  const [selectedColors, setSelectedColors] = React.useState([]);
+  const [selectedSizes, setSelectedSizes] = React.useState([]);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+ // Handle checkbox change
+ const handleCategoryChange = (category) => {
+  setSelectedCategories((prev) =>
+    prev.includes(category)
+      ? prev.filter((c) => c !== category) // Remove if already selected
+      : [...prev, category] // Add if not selected
+  );
+};
+const handleColorChange = (color) => {
+  setSelectedColors((prev) =>
+    prev.includes(color) ? prev.filter((c) => c !== color) : [...prev, color]
+  );
+};
+const handleSizeChange = (size) => {
+  setSelectedSizes((prev) =>
+    prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]
+  );
+};
+  // Filter products based on selected categories
+  const filteredProducts =
+    selectedCategories.length === 0
+      ? productsData // Show all if no category is selected
+      : productsData.filter((product) =>
+          selectedCategories.includes(product.category)
+        );
 
   // Animations
   const titleVariants = {
@@ -76,61 +145,29 @@ const Shop = () => {
           </div>
           <div className={styles.categoryListFilter}>
             <p>All categories</p>
-            <ul className={styles.categoryList}>
-              <li>Dresses</li>
-              <li>Abaya</li>
-            </ul>
-          </div>
-          <div className={styles.categoryColorFilter}>
-            <p>By color</p>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "10px",
-                padding: "10px",
-              }}
-            >
-              {colors.map((color) => (
-                <div
-                  key={color}
-                  onClick={() => console.log(color)}
-                  style={{
-                    backgroundColor: color,
-                    boxShadow: "0px 0px 10px #00000022",
-                    width: "30px",
-                    height: "30px",
-                    border: "1px solid #00000030",
-                    padding: "5px",
-                    borderRadius: "50%",
-                    cursor: "pointer",
-                  }}
-                ></div>
-              ))}
+            <div className={styles.categoryList}>
+            {categories.map((category) => (
+              <div className={styles.selectGroup}>
+                    <label key={category} className={styles.selectLabel}>
+            <input
+              type="checkbox"
+              checked={selectedCategories.includes(category)}
+              onChange={() => handleCategoryChange(category)}
+              className={styles.category}
+            />
+            <span>{category}</span>
+          </label>
+              </div>
+      
+        ))}
             </div>
           </div>
-          <div className={styles.categorySizeFilter}>
-            <p>By size</p>
-            <div style={{ display: "flex", gap: "10px", padding: "10px" }}>
-              {sizes.map((size) => (
-                <div
-                  key={size}
-                  onClick={() => console.log(size)}
-                  style={{
-                    width: "70px",
-                    textAlign: "center",
-                    border: "1px solid #00000030",
-                    padding: "0px 10px",
-                    textTransform: "uppercase",
-                    borderRadius: "5%",
-                    cursor: "pointer",
-                  }}
-                >
-                  <p>{size}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <>
+        <ColorFilter colors={colors} selectedColors={selectedColors} handleColorChange={handleColorChange} /></>
+        <>
+        <SizeFilter sizes={sizes} selectedSizes={selectedSizes} handleSizeChange={handleSizeChange} />
+        </>
+        
           <div className={styles.categoryPriceFilter}>
             <p>By Price</p>$10
             <Slider
