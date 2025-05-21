@@ -33,6 +33,7 @@
             background: #00000004;
             box-sizing: border-box;
             padding: 2rem;
+            position: relative;
             
             h3{
                 display: flex;
@@ -178,3 +179,17 @@
         color: #fff!important;
     }
   }
+
+  .sortSelect{
+    height: 35px;
+    padding: 5px;
+    width: 100%;
+    margin-top: 1rem;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+    background: #c4c4c4;
+    outline: none;
+    font-weight:500;
+  }
+  

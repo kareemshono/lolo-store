@@ -1,10 +1,10 @@
 
 import { ReduxProvider } from "@/redux/ReduxProvider";
-import Footer from "./components/footer/Footer";
-import Navbar from "./components/navbar/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Whatsapp from "./components/whatsapp/Whatsapp";
+import UserInitializer from "./components/userInit/UserInitializer";
+import AppWrapper from "./components/appWrapper/AppWrapper";
 
 
 const inter = Inter({subsets:["latin"], weight:["100","200","300","400","500","600","700","800","900"]})
@@ -18,9 +18,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className}`}>
         <ReduxProvider >
-        <Navbar />
-        {children}
-        <Footer />
+          <AppWrapper>
+            {children}
+          </AppWrapper>
         </ReduxProvider>
         <Whatsapp />
       </body>

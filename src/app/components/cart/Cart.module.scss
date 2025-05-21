@@ -2,6 +2,7 @@
     width: 100vw;
     height: 100vh;
     position: fixed;
+    z-index: 1;
     inset: 0;
     background: #0000007b;
     display: flex;
@@ -238,7 +239,7 @@
     }
 }
 .btnCheckout {
-    padding: 15px 25px; // More padding for a better feel
+    padding: 15px 15px; // More padding for a better feel
     border-color:#9E816F;
     background: transparent;
     color: #fff;
@@ -248,7 +249,7 @@
     justify-content: space-between;
     gap: 50px; // Adjusted gap for better alignment
     outline: none;
-    width: 50%; // Slightly wider for more emphasis
+    width: 60%; // Slightly wider for more emphasis
     font-size: 18px; // Slightly larger for better readability
     margin-top: 3rem;
     // More rounded corners for a modern look
@@ -261,4 +262,10 @@
       background-color: darken(#9e816fc1, 5%);
       transform: translateY(-2px)!important; // Lift the button slightly on hover
     }
+}
+
+.emptyCartText{
+    font-size: 2rem;
+    color: #00000083;
+    margin-top: 5rem;
 }

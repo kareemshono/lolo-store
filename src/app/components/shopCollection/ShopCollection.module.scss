@@ -4,10 +4,25 @@
 
     display: flex;
     box-sizing: border-box;
+    justify-content: center;
 
     padding: 1rem;
-    gap: 10px;
+    gap: 20px;
 
     flex-wrap: wrap;
     margin-bottom: 4rem;
-}
+
+}    .productsHeader{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 1rem ;
+    .colLeft{
+        width: 50%;
+       
+        text-align: center;
+    }
+    .colRight{
+        width: 50%;
+        text-align: center;
+    }
+        }
