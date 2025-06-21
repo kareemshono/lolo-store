@@ -1,3 +1,14 @@
+@mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @content;
+  }
+}
 .shopCollectionContainer {
     width: 100%;
     height: 100%;
@@ -16,6 +27,12 @@
     display: flex;
     justify-content: space-between;
     margin: 2rem 1rem ;
+    @include mobile {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+    }
     .colLeft{
         width: 50%;
        

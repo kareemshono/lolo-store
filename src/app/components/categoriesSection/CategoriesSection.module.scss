@@ -19,6 +19,7 @@
     margin:5rem 0rem;
     .row{
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         gap: 30px;
@@ -39,7 +40,7 @@
                   margin-bottom: 0rem;
                   text-transform: uppercase; // Adds a bold, standout look
                   @include mobile {
-                    font-size: 2.7rem;
+                    font-size: 2rem;
                   }
                 }
             
@@ -48,6 +49,10 @@
                   margin-bottom: 2.5rem; // Added more space below for better separation
                   font-size: 18px; // Slightly larger for better readability
                   line-height: 1.6; // Better spacing between lines
+                  @include mobile {
+                    font-size: 16px;
+                    margin-bottom: 1rem;
+                  }
                 }
               }
             

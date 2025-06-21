@@ -1,6 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { useTransition } from "../transition/TransitionProvider";
+
+
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import { AiOutlineClose } from "react-icons/ai";
@@ -19,6 +22,8 @@ import {
 import { fetchUser, clearError } from "@/redux/slices/userSlice/userSlice";
 
 const Cart = ({ handleToggle }) => {
+    // Inside your component:
+const { startLoading } = useTransition();
     const dispatch = useDispatch();
     const router = useRouter();
     const { user, error: authError } = useSelector((state) => state.userSlice);
@@ -149,6 +154,7 @@ const Cart = ({ handleToggle }) => {
     // Handle checkout
     const handleCheckout = () => {
         console.log("Cart: Navigating to checkout, user:", user ? user.id : "guest");
+        startLoading(); // ✅ Start spinner
         if (!user) {
             router.push("/signin");
             handleToggle(false);
@@ -245,8 +251,9 @@ const Cart = ({ handleToggle }) => {
                     </div>
                     <div className={styles.row}>
                         <button onClick={handleCheckout} className={styles.btnCheckout}>
-                            <span>{total.toFixed(2)} TL</span>
                             Checkout
+                            <span>{total.toFixed(2)} TL</span>
+                            
                         </button>
                     </div>
                 </div>

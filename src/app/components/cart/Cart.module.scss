@@ -1,29 +1,53 @@
+@mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @content;
+  }
+}
 .cartModal {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     inset: 0;
     background: #0000007b;
     display: flex;
     justify-content: center;
     align-items: center;
-
+     
     .cartContainer{
         width: 85%;
         height: 95%;
         background:#fff;
         display: flex;
         border-radius: 20px;
+        @include mobile {
+            width: 95%;
+            flex-direction: column;
+        }
         .colLeft{
-            width: 60%;
+            width: 65%;
             box-sizing: border-box;
             padding: 1rem 2rem;
+            @include mobile {
+                width: 100%;
+                height: 60%;
+                padding: 1rem;
+                overflow-y: scroll;
+            }
            .header{
             position: relative;
             
             h2{
                 padding-top:4.5rem;
+                @include mobile {
+                    padding: 0
+                }
             };
            }
             .body{
@@ -41,16 +65,22 @@
             .cartItem{
                 width: 100%;
                 height: 15%;
-                
+                position: relative;
                 border-radius: 10px;
                 box-sizing: border-box;
                 box-shadow: 0px 3px 10px 3px #00000013;
                 display: flex;
                 align-items: center;
+                
                 padding: 1rem;
+                @include mobile {
+                    flex-direction: column;
+                }
                 .itemImage{
                     width: 20%;
-                    
+                    @include mobile {
+                        width: 100%;
+                    }
 
                 }
                 .itemInfo{
@@ -63,6 +93,10 @@
                     .itemSubtitle{
                         font-size: 14px;
                     }
+                     @include mobile {
+                        width: 100%;
+                        margin-top: 1rem;
+                    }
                 }
                 .itemQuant{
                     height: 100%;
@@ -71,14 +105,21 @@
                     
                     align-items: center;
                     justify-content: center;
-                    gap: 5px;
+                    gap: 10px;
+                    @include mobile {
+                        justify-content: flex-start;
+                        margin:1rem 0rem ;
+                        width: 100%;
+                    }
                     span{
-                        font-size: 14px;
+                        font-size: 16px;
+                        cursor: pointer;
+
                     }
                     .count{
                         font-size: 18px;
                         background: #d7d7d7;
-                        padding: 2px 5px;
+                        padding: 5px 10px;
                         border-radius: 5px;
                     }
                 }
@@ -95,19 +136,46 @@
                         cursor: pointer;
                     
                     }
+                     @include mobile {
+                        width: 100%;
+                       
+                        span{
+                             font-size: 2.5rem;
+                              position: absolute;
+                       
+                        top: 10%;
+                        right: 0%;
+                        }
+                    }
+                }
+                .itemPrice{
+                    
+                    @include mobile {
+                        width: 100%;
+                        position: absolute;
+                        right: 1%;
+                        text-align: end;
+                        top: 40%;
+                    }
                 }
             }
         }
         .colRight{
-            width: 40%;
+            width: 35%;
             height: 100%;
             display: flex;
             flex-direction: column;
            position: relative;
             padding: 2rem;
             background: rgb(57,43,23);
-            background: linear-gradient(62deg, rgba(57,43,23,1) 0%, rgba(201,152,70,1) 100%);
+            background: linear-gradient(62deg, #392b17 0%, rgba(201,152,70,1) 100%);
             border-radius: 0px 20px 20px 0px;
+            @include mobile {
+                width: 100%;
+                height: 40%;
+                padding: 1rem;
+                border-radius: 0px 0px 20px 20px;
+            }
             .closeIcon{
                 position: absolute;
                 top: 5%;
@@ -137,6 +205,9 @@
         color: #f1f1f1;
         padding: 1rem;
         margin-top: 2rem;
+        @include mobile {
+            margin: 0;
+        }
        }
             .rowBody{
                 height: 50%;
@@ -147,6 +218,12 @@
                 background: #00000046;
                 border-radius: 10px;
                 margin-top: 2rem;
+                @include mobile {
+              margin-top: .5rem;
+              height: 50%;
+              align-items: flex-start;
+              
+            }
                 p{
                     color: #f1f1f1;
                 }
@@ -178,6 +255,9 @@
                       background-color: darken(#9e816fc1, 5%);
                       transform: translateY(-2px)!important; // Lift the button slightly on hover
                     }
+                    @include mobile {
+                        
+                    }
                 }
                 .colSummaryTitles{
                     width: 50%;
@@ -190,6 +270,9 @@
                     color: #f1f1f1;
                     font-size: 1.1rem;
                     font-weight: 600;
+                    @include mobile {
+                        gap: 10px;
+                    }
                 }
                 .colSummaryValues{
                     width: 50%;
@@ -198,7 +281,9 @@
                     display: flex;
                     flex-direction: column;
                     gap: 30px;
-                    
+                     @include mobile {
+                        gap: 10px;
+                    }
                    text-align: center;
                    font-size: 1rem;
                 }
@@ -239,18 +324,24 @@
     }
 }
 .btnCheckout {
-    padding: 15px 15px; // More padding for a better feel
-    border-color:#9E816F;
-    background: transparent;
-    color: #fff;
-    border: 2px solid;
+    padding: 15px 20px; // More padding for a better feel
+    border-color:#392b17;
+    background: #f1f1f1;
+    color: #392b17;
+    span{
+            color: #392b17!important;
+            font-size: 18px;
+             transition: all 0.3s ease; // Smooth transition for hover effects
+        }
+    border: 1px solid;
+    border-radius: 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px; // Adjusted gap for better alignment
+    gap: 25px; // Adjusted gap for better alignment
     outline: none;
-    width: 60%; // Slightly wider for more emphasis
-    font-size: 18px; // Slightly larger for better readability
+    width: 70%; // Slightly wider for more emphasis
+    font-size: 20px; // Slightly larger for better readability
     margin-top: 3rem;
     // More rounded corners for a modern look
     font-weight: 600;
@@ -259,8 +350,20 @@
     cursor: pointer;
     transition: all 0.3s ease; // Smooth transition for hover effects
     &:hover {
-      background-color: darken(#9e816fc1, 5%);
+        span{
+            color: #ffffff!important;
+        }
+      background-color: #C99846;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      color: #ffffff;
+      border-color: #392b17;
       transform: translateY(-2px)!important; // Lift the button slightly on hover
+    }
+    @include mobile {
+        margin-top: 1.5rem;
+        width: 80%;
+        gap: 10px;
+        font-size: 16px;
     }
 }
 

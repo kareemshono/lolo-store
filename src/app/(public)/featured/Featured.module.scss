@@ -1,0 +1,91 @@
+@mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @content;
+  }
+}
+.featuredContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+   flex-direction: column;
+
+   .header {
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .5)),url("/featuredBg.webp");
+    background-size: cover;
+    background-position:center ;
+    .featuredBanner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+        .title{
+            font-size: 4.5rem;
+            letter-spacing: 15px;
+            color: #f1f1f1; 
+              @include mobile{
+            font-size: 2rem;
+        }
+        }
+    }
+    @include mobile {
+        height: 30vh;
+    }
+   }
+   .body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0rem 5rem;
+    @include mobile{
+        flex-direction: column-reverse;
+        padding: 3rem;
+    }
+    .colRight{
+        h1{
+            margin-bottom: 20px;
+           
+        } p{
+            line-height: 25px;
+            font-weight: 300;
+            span{
+                font-weight: bold;
+                
+            }
+        }
+    }
+    .row{
+        padding: 1rem;
+    }
+    .mySwiper2 {
+        height: 80vh;
+        width: 90%;
+        .productDescription{
+            text-align: start;
+            padding: 1rem;
+            h2{
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+   
+       }
+   }
+    
+}

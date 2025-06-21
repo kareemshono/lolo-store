@@ -9,5 +9,15 @@ export const categoriesData = [{
     imgUrl:"/abaya.webp",
     url:"/shop/abaya"
 },
+   { id:"abaya",
+    title:"abaya",
+    imgUrl:"/abaya.webp",
+    url:"/shop/abaya"
+},
+   { id:"abaya",
+    title:"abaya",
+    imgUrl:"/abaya.webp",
+    url:"/shop/abaya"
+},
 
 ]

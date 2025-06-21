@@ -19,13 +19,14 @@
     display: flex;
     transition: .3s all ease-in-out;
     justify-content: space-between;
-    padding: 4rem;
+    padding: 3rem;
     
     .logo{
         width: 20%;
         display: flex;
         align-items: center;
         padding: 0rem 1rem;
+     
         
     }
     .navbar {
@@ -92,7 +93,8 @@
            .navLink {
             font-size:16px;
             padding: 10px 0px;
-            font-weight: 500;
+            font-weight: 600;
+            letter-spacing: 1px;
             text-transform: uppercase;
             color: #f1f1f1;
             border-bottom: 2.5px solid transparent;
@@ -121,8 +123,14 @@
             width:15%;
             box-sizing: border-box;
             box-shadow: 0px 0px 10px #000;
+              @include mobile {
+              width: 80%;
+              right: 10%;
+              margin: 1rem auto;
+            }
             .dropDownList{
               list-style: none;
+              
               .dropDownItem{
                 
              
@@ -146,6 +154,7 @@
                 }
               }
             }
+          
            }
       
         }
@@ -167,7 +176,7 @@
   
 @media only screen and (max-width: 760px) {
   .navContainer {
-    padding: .5rem;
+    padding: 1rem;
     
     .navbar {
       width: 100%;
@@ -179,14 +188,14 @@
         display: block ;
           position: fixed;
           right: 0;
-          top: 5%;
+          top: 3.5%;
         
       }
   
     }
     .logo{
       position: fixed;
-      top: 3%;
+      top: 2%;
       left: 3%;
       
       
@@ -210,12 +219,7 @@
 
    
 
-    .logo {
-      position: absolute;
-      top: 1%;
-      left: 2%;
-      z-index: 9;
-    }
+ 
 
     .navList {
       display: flex;
@@ -236,4 +240,20 @@
               }
              
             }
+           }
+
+           .cartCount{
+                    position: 'absolute';
+                            top: '-8px';
+                                        right: '-8px';
+                            background-color: #e74c3c;
+                                        color: '#fff';
+                           border-radius: 50%;
+                                        width: '18px';
+                                        height: '18px';
+                                        display: 'flex';
+                                        align-items: 'center';
+                                justify-content: 'center';
+                                        font-size: '12px';
+                                        font-weight: 'bold';
            }

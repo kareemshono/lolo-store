@@ -1,27 +1,59 @@
+    @mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @content;
+  }
+}
 .loadingContainer{
     width: 100vw;
     height: 100vh;
     position: fixed;
     inset: 0;
     z-index: +9999;
-    background: rgb(34, 34, 34);
+    background: #f1f1f1;
     display: flex;
     justify-content: center;
     align-items: center;
     .loadingSpinner {
-        width: 25%;
+        width: 35%;
        
         height: 25%;
         h3{
-            color: #c99946;
+            color: #797979;;
+            font-size: 1.3rem;
+            margin-top: .5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            span{
+            color: var(--primary-black);}
+            @include mobile {
+                font-size: 1.3rem;
+            }
         }
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        img{
-            width: 50%;
-            height: 50%;
+  
+    @include mobile {
+        width: 80%;
+        align-items: flex-start;
+        h3{
+            line-height: 30px;
+            font-size: 1.2rem;
+          
         }
+    }
+    }
+    .loadingLogo{
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        opacity: .5;
     }
 }

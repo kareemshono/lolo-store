@@ -1,0 +1,28 @@
+.navContainer{
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(29, 29, 29, 1);
+    justify-content: space-between;
+    color: #f1f1f1;
+    padding: 1rem;
+
+    .navLogoContainer{
+        h1{
+            padding: 0;
+            margin: 0;
+        }
+        p{
+            padding: 0;
+            
+            color: #f1f1f17e;
+        }
+    }
+    .navList {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+    }
+}

@@ -1,3 +1,14 @@
+    @mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @content;
+  }
+}
 .ctaAboutSection{
     width:100vw;
     height: 100vh;
@@ -12,7 +23,7 @@
         height: 100%;
         position: absolute;
         inset: 0;
-        background: #00000055;
+        background: #00000073;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,7 +43,7 @@
                 color: #f1f1f1;
                 margin-bottom: 40px;
             }
-            button{
+            a{
                 padding: 15px 30px;
                 border: 2px solid #fff ;
                 color: #fff;
@@ -43,19 +54,43 @@
                 gap: 5px;
                 outline: none;
                 width: 30%;
-                font-weight: 600;
+                font-weight: 500;
                 
                 background: transparent;
                 font-size: 20px;
                 border-radius: 10px;
-                background-color:#554023ad;
+                background-color:#c99946c2;
                 transition: .3s all ease-in-out;
                 cursor: pointer;
                
                 &:hover {
-                    background-color: #554023dc;
+                    background-color: #c99946;
                 }
             }
+               @include mobile {
+            width: 90%;
+            h2{
+                font-size: 2rem;
+                
+            }
+            a{
+                width: 50%;
+            }
+             p{
+                font-size:16px;
+                color: #f1f1f1;
+                margin-bottom: 2rem;
+            }
         }
+
+        .btn{
+            background: transparent;
+            outline: none;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+        }
+        }
+     
     }
 }

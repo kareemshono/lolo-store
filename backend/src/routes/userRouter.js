@@ -86,13 +86,20 @@ router.post("/logout", (req, res) => {
 router.get("/me", async (req, res) => {
     const token = req.cookies.token;
     if (!token) {
-        return res.status(401).json({ msg: "No token provided" });
+        return res.status(401).json({ msg: "Not authenticated" });
     }
     try {
         const decoded = jwt.verify(token, JWT_SECRET);
-        const user = await queries.getUserById(decoded.id); // Changed to getUserById
+        const user = await queries.getUserById(decoded.id);
         if (!user) {
-            return res.status(404).json({ msg: "User not found" });
+            // Clear invalid token cookie
+            res.cookie("token", "", {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === "production",
+                sameSite: "Strict",
+                expires: new Date(0),
+            });
+            return res.status(401).json({ msg: "Not authenticated" });
         }
         res.status(200).json({
             user: {
@@ -104,7 +111,14 @@ router.get("/me", async (req, res) => {
         });
     } catch (err) {
         console.error("Me endpoint error:", err.message);
-        res.status(401).json({ msg: "Invalid or expired token" });
+        // Clear invalid or expired token cookie
+        res.cookie("token", "", {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "Strict",
+            expires: new Date(0),
+        });
+        res.status(401).json({ msg: "Not authenticated" });
     }
 });
 

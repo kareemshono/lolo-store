@@ -1,9 +1,9 @@
 "use client"
 
-
 import { HiShoppingBag } from "react-icons/hi2"
+import { FaCircleArrowDown } from "react-icons/fa6";
 import styles from "./Hero.module.scss"
-import { Inter} from "next/font/google"
+import { Inter } from "next/font/google"
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from "next/navigation"
 
@@ -35,8 +35,17 @@ const Hero = () => {
       },
     },
   }
+
   const handleShopNow = () => {
     router.push("/shop")
+  }
+
+  const handleScroll = () => {
+    console.log('Scroll arrow clicked, scrolling down 500px');
+    window.scrollBy({
+      top: 700,
+      behavior: 'smooth',
+    });
   }
 
   return (
@@ -51,24 +60,26 @@ const Hero = () => {
         <motion.h1 className={styles.title} variants={itemVariants}>
           For Women
         </motion.h1>
-        
         <motion.p className={styles.subtitle} variants={itemVariants}>
           Discover the latest trends and timeless pieces, designed for <br /> the modern
           woman. Shop our exclusive collection today.
         </motion.p>
         <motion.button
-        onClick={handleShopNow}
+          onClick={handleShopNow}
           className={`${styles.btn} ${inter.className}`}
           variants={itemVariants}
         >
-          <span ><HiShoppingBag /></span>
+          <span><HiShoppingBag /></span>
           Shop Now
         </motion.button>
       </motion.div>
-
-      <div className={styles.colRight}>
-
-
+      <div className={styles.colRight}></div>
+      <div className={styles.scrollArrow}>
+        <FaCircleArrowDown
+          className={styles.icon}
+          onClick={handleScroll}
+          style={{ cursor: 'pointer' }}
+        />
       </div>
     </section>
   )

@@ -9,165 +9,260 @@
     @content;
   }
 }
+
 .cardContainer {
-    height: 75vh;
-    width: 25vw;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-   border: 1px solid #EDEDED
-    ; // Rounded corners for a softer look
-    overflow: hidden; // Ensures content stays within rounded borders
-    transition: transform 0.3s ease-in-out; // Smooth card scaling on hover
+  height: 35%;
+  width: 22vw;
+  display: flex;
+  background: #0000001e;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   @include mobile {
     width: 100%;
-    height: 50vh;
+    height: 50%;
   }
-    .imgWrapper {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      position: relative;
-  
-      .wishHeart {
-        position: absolute;
-        top: 15px; // Consistent spacing from the top
-        right: 15px; // Consistent spacing from the right
-        font-size: 1.2rem;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color:#C99846;
-        background: rgba(255, 255, 255, 0.8); // Softer background
-        padding: 0.5rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out;
-        
-        &:hover {
-          background-color: #ffffff;
-        }
-      }
-  
-      .cartButton {
-        position: absolute;
-        top: 10px;
-        left: 0px;
-        font-size: 14px;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        align-items: center;
-        color: #fff;
-        border: none;
-        background:#c99946cb;
-;
-        padding: 0.8rem;
-        cursor: pointer;
-        opacity: 0; // Initially hidden for smoother reveal
-        transform: translateX(-100%);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        
-        &:hover {
-          background: #C99846;
-        }
-      }
-  
-      .hoverDiv {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%, 50%); // Centered horizontally
-        padding: 1rem;
-        background: #171517b0;
-        opacity: 0;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-  
-        p {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          color: #fff;
-          font-weight: 500;
-        }
-  
-        &:hover {
-          background: #C99846; // Slightly darker on hover
-        }
-      }
-  
-      &:hover {
-        .hoverDiv {
-          opacity: 1;
-          transform: translate(-50%, 0); // Slide up effect on hover
-        }
-        .cartButton {
-          opacity: 1;
-          transform: translateX(0); // Slide in from the left on hover
-        }
-      }
+  @include tablet {
+    width: 45%;
+  }
+
+  &:hover {
+    box-shadow: 0px 1px 10px #9e816f27;
+    transform: scale(1.05);
+    .addToCart {
+      z-index: 1;
+      transform: translateX(0);
+      opacity: 1;
     }
-  
-    .imgContainer {
-      height: 100%;
-      width: 100%;
-      text-align: center;
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.5s ease; // Smooth image scaling
-  
-      &:hover {
-        transform: scale(1.1);
-        transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
-    }
-  
-    .text {
-      height: 20%;
-      color: var(--secondary-black);
+  }
+}
+
+.imgContainer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+  height: 70%;
+  aspect-ratio: 3.1 / 4;
+  @include mobile {
+    aspect-ratio: 3 /4;
+    height: 50%;
+  }
+
+  .imgOverlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .hoverDiv {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    padding: 1rem;
+    background: #171517b0;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+
+    p {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 1rem;
-      
-      .left{
-        text-align: start;
-        width: 70%;
-        h2 {
-          margin-bottom: 0.5rem;
-          font-size: 18px;
-          font-weight: 600; // Slightly bolder for emphasis
-        }
-    
-        p {
-          opacity: 0.8;
-          font-size: 14px; // Adjusted for better readability
-        }
-      }
-      .right{
-        width: 30%;
-        display: flex;
-        
-        justify-content: center;
-        text-transform: uppercase;
-        gap: 5px;
-        color: #fff;
-        p{
-          opacity: .7;
-          background: var(--primary-black);
-          font-size: 12px;
-          padding: 8px;
-        }
-      }
-  
-    
+      justify-content: center;
+      gap: 10px;
+      font-size: 18px;
+      color: #fff;
+      font-weight: 500;
     }
-  
+
     &:hover {
-      transform: translateY(-10px); // Lift effect on hover
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); // Enhanced shadow for hover
+      background: #C99846;
     }
   }
-  
+
+  &:hover {
+    .hoverDiv {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+    .imgOverlay {
+      background-color: #00000071;
+    }
+  }
+}
+
+.infoContainer {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  z-index: 1;
+
+  .colLeft {
+    width: 60%;
+    text-transform: capitalize;
+
+    .title {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .priceRange {
+      color: #454545;
+      font-size: 0.9rem;
+    }
+  }
+
+  .colRight {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.wishHeart {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9E816F;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 2;
+
+  &:hover {
+    background-color: #ffffff;
+  }
+}
+
+.addToCart {
+  position: absolute;
+  opacity: 0;
+  top: 10px;
+  left: 25px;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9E816F;
+  background: rgba(255, 255, 255, 1);
+  padding: 0.7rem 0.9rem;
+  cursor: pointer;
+  transform: translateX(-50%);
+  z-index: 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  .text {
+    display: block;
+    margin-left: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  &:hover {
+    background-color: #C99846;
+    color: #fff;
+  }
+}
+
+.sizeContainer {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.sizeOption {
+  padding: 8px;
+  text-transform: uppercase;
+  display: flex;
+  font-size: 0.7rem;
+  justify-content: center;
+  align-items: center;
+  background: #9e816f2e;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &:hover {
+    background-color: #454545;
+    color: #fff;
+  }
+
+  &.selected {
+    background-color: #454545;
+    color: #fff;
+  }
+}
+
+.colorContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.colorOption {
+  width: 24px;
+  height: 24px;
+  border-radius: 10%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.selected {
+    border: 2px solid #000;
+    transform: scale(1.1);
+  }
+}
+
+.toastContainer {
+  width: 100% !important;
+  max-width: 100% !important;
+  text-align: center;
+  bottom: 0 !important;
+  top: auto !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.customToast {
+  background: #fff !important;
+  color: #333 !important;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 auto;
+  width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

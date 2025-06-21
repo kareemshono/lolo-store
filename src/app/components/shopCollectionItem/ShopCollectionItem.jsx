@@ -12,6 +12,7 @@ import { useState } from "react";
 import { toggleModal } from "@/redux/slices/productModal/productModalSlice";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import TransitionLink from "../transition/TransitionLink";
 
 const ShopCollectionItem = ({ product }) => {
     const dispatch = useDispatch();
@@ -39,15 +40,16 @@ const ShopCollectionItem = ({ product }) => {
 
     // Handle add to cart
     const handleAddToCart = () => {
+     
         if (!selectedVariant) {
             toast.error("Please select size and color", {
-                position: "bottom-center",
+                position: "top-center",
                 autoClose: 3000,
-                hideProgressBar: true,
+                hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
-                className: styles.customToast,
+                
             });
             return;
         }
@@ -65,13 +67,13 @@ const ShopCollectionItem = ({ product }) => {
             })
         ).then(() => {
             toast.success("Added to cart!", {
-                position: "bottom-center",
+                position: "top-center",
                 autoClose: 3000,
-                hideProgressBar: true,
+                hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
-                className: styles.customToast,
+                
             });
         });
     };
@@ -104,9 +106,9 @@ const ShopCollectionItem = ({ product }) => {
             <div className={styles.infoContainer}>
                 <div className={styles.colLeft}>
                     <h4 className={styles.title}>
-                        <Link href={`/products/${product.product_id}`}>
+                        <TransitionLink href={`/products/${product.product_id}`}>
                             {product.product_name}
-                        </Link>
+                        </TransitionLink>
                     </h4>
                     <span className={styles.wishHeart}>
                         <FaHeart />
@@ -151,9 +153,9 @@ const ShopCollectionItem = ({ product }) => {
                 </div>
             </div>
             <ToastContainer
-                position="bottom-center"
-                autoClose={3000}
-                hideProgressBar
+                position="top-center"
+                autoClose={2000}
+                
                 newestOnTop={false}
                 closeOnClick
                 rtl={false}

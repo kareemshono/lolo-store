@@ -1,6 +1,20 @@
+    @mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @content;
+  }
+}
 .customerReviewsSection{
     width: 100%;
     padding: 5rem 3rem;
+    @include mobile {
+        padding: 3rem;
+    }
     .header {
         position:relative;
         h1{
@@ -10,6 +24,10 @@
             text-transform: uppercase;
             span{
                 color: #c99946;
+              }
+              @include mobile {
+                margin-bottom: 1rem;
+                font-size: 1.7rem;
               }
         }
         p{

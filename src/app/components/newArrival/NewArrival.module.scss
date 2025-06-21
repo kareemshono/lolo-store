@@ -30,7 +30,7 @@
         margin-bottom: 1rem;
         text-transform: uppercase; // Adds a bold, standout look
         @include mobile {
-          font-size: 2.7rem;
+          font-size: 2rem;
         }
         span{
           color: #c99946ec;
@@ -42,6 +42,10 @@
         margin-bottom: 2.5rem; // Added more space below for better separation
         font-size: 18px; // Slightly larger for better readability
         line-height: 1.6; // Better spacing between lines
+        @include mobile {
+          margin-bottom: 1rem;
+          font-size: 16px;
+        }
       }
     }
   
@@ -66,4 +70,8 @@
       }
     }
   }
-  
+  .spinnerContainer{
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }

@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { FaRegEyeSlash } from "react-icons/fa";
 import { motion } from "framer-motion"
 import styles from "./ExeclusiveOffers.module.scss"
 import { Autoplay, Pagination } from 'swiper/modules';
@@ -50,7 +51,7 @@ const ExeclusiveOffers = () => {
         </div>
         </motion.div>
         <div className={styles.body}>
-        <Swiper
+        {/* <Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -110,7 +111,14 @@ const ExeclusiveOffers = () => {
         </SwiperSlide>
        
       
-      </Swiper>
+      </Swiper> */}
+        <div className={styles.glassOverlay}>
+        </div>
+        <div className={styles.text}>
+          <FaRegEyeSlash className={styles.icon} />
+          <h2>Coming <span>Soon</span>...</h2>
+          <p>This photo contains something <br />you may find interesting</p>
+        </div>
         </div>
      
      

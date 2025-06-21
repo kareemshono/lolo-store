@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import styles from "./CtaAbout.module.scss"
+import TransitionLink from "../transition/TransitionLink"
 
 // Animation variants for the parent container
 const containerVariants = {
@@ -44,9 +45,13 @@ const CtaAbout = () => {
           <motion.p variants={textVariants}>
             Each piece is crafted with care and precision, designed to keep you looking chic all year round
           </motion.p>
-          <motion.button variants={textVariants}>
-            About Us
-          </motion.button>
+          
+            <TransitionLink href="/about">
+            <motion.button className={styles.btn} variants={textVariants}>About Us</motion.button>
+            
+            </TransitionLink>
+            
+          
         </motion.div>
       </motion.div>
     </section>

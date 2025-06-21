@@ -1,8 +1,22 @@
+    
+    @mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @content;
+  }
+}
 .serviceFeaturesSection{
     width: 100vw;
     display: flex;
     flex-direction: column;
-    
+    @include mobile {
+        height: 80vh;
+    }
     .header{
         display: flex;
         flex-direction: column;
@@ -11,17 +25,34 @@
         margin: 5rem 0rem;
         font-size: 2rem;
         text-transform: uppercase;
+        @include mobile {
+            height: 20%;
+            margin: 1rem;
+            color: #000000;
+            text-align: center;
+            justify-content: flex-end;
+            font-size: 1.5rem;
+        }
     
     }
     .row{
         height: 30vh;
+    
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        
         background: var(--primary-black);
         gap: 20px;
+        @include mobile {
+            
+            flex-direction: column;
+            gap: 10px;
+            height: 90%;
+            width: 100%;
+            padding: 1rem;
+            
+        }
         .col{
             display: flex;
             padding: 3rem 0rem;
@@ -40,12 +71,20 @@
             h2{
                 font-size: 20px;
                 margin-bottom: 10px;
+                @include mobile {
+                    font-size: 16px;
+                }
             }
             p{
                 font-size: 14px;
                 opacity: .8;
             }
-
+            @include mobile {
+                flex-direction: column;
+                padding: 1rem;
+                width:100%;
+                align-items: flex-start;
+            }
         }
     }
 }

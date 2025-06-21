@@ -1,3 +1,14 @@
+@mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @content;
+  }
+}
 .shopCollectionItem{
     height: 45%;
     width: 30%;
@@ -11,21 +22,17 @@
 box-shadow: 0px 1px 10px #9e816f27;
 transform: scale(1.05);
 .addToCart {
-    z-index: 1;
+    z-index: +9;
     transform: translateX(0);
-    opacity: 1;
- 
-  
+    opacity: 1;  
 }
 
     }
     .imgContainer {
-        width: 100%;
     
-       
+
         text-align: center;
         margin-bottom: 10px;
-        
         position: relative; /* required for fill */
         width: 100%;        /* or your desired width */
         height: auto;       /* optional, use padding-bottom trick for aspect ratio */
@@ -88,17 +95,31 @@ transform: scale(1.05);
             text-transform: capitalize;
             .title{
                 margin-bottom: 10px;
+                @include mobile {
+                  font-size: .8rem;
+                  margin-bottom: 5px;
+                }
             }
             .priceRange {
                 color: #454545;
                 font-size: .9rem;
+                 @include mobile {
+              width: 100%;
+              font-weight: bold;
+              
+            }
+            }
+            @include mobile {
+              width: 100%;
             }
         }
         .colRight{
-            width: 40%;
+            width: 50%;
             height: 50%;
             display: flex;
+            flex-wrap: wrap;
             justify-content: flex-end;
+            flex-direction: column;
             gap: 5px;
             span {
                 
@@ -116,7 +137,16 @@ transform: scale(1.05);
                     background-color: #454545;
                     color: #fff;
                 }
+                 @include mobile {
+              font-size: .5rem;
+              margin-top: 5px;
+              padding: 5px;
             }
+            }
+        }
+        @include mobile {
+          padding: .5rem;
+          flex-direction: column;
         }
     }
 
@@ -169,6 +199,17 @@ transform: scale(1.05);
          color: #fff;
    
         }
+          @include mobile {
+        width: 25%;
+        margin: 0;
+        left: 1%;
+        .text{
+          display: none;
+        }
+      }
+      }
+      @include mobile {
+        width: 45%;
       }
 }
 /* Existing styles unchanged */
@@ -180,14 +221,15 @@ transform: scale(1.05);
 /* Size container for clarity */
 .sizeContainer {
   display: flex;
-  gap: 8px;
+  gap: 5px;
   margin-bottom: 8px;
 }
 
 /* Color container and options */
 .colorContainer {
   display: flex;
-  gap: px;
+ 
+  gap: 5px;
 }
 
 .colorOption {

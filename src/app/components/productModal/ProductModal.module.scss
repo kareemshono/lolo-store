@@ -1,3 +1,14 @@
+@mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @content;
+  }
+}
 .productModal{
     width: 100vw;
     height: 100vh;
@@ -9,24 +20,30 @@
     z-index: +999;
     
     background-color: rgba(0, 0, 0, 0.281);
+
     .productContainer{
         width: 85%;
-        height: 85%;
+        height: 90%;
         background: #f1f1f1;
         border-radius: 10px;
-        padding: 1rem;
+        padding: .5rem;
         display: flex;
         position: relative;
         align-items: center;
+            @include mobile {
+                width: 95%;
+                height: 95%;
+             flex-direction: column-reverse;
+    }
         .colLeft {
             height: 100%;
-            
             width: 40%;
             display: flex;
             padding: 2rem;
             align-items: center;
             justify-content: center; 
             border-right: 1px solid #33333370;
+        
             .stockStatus{
                 width: 15%;
                 height: 7%;
@@ -34,15 +51,29 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                
                 color: #fff;
                 position: absolute;
+                border-radius: 0px 0px 10px 10px;
                 top: 0%;
                 left: 12%;
                 
                 span{
-                    font-size: 25px;
+                    font-size: 1.3rem;
                     font-weight: bold;
                     padding: 5px 20px;
+                    @include mobile {
+                        font-size: 1rem;
+                    }
+                }
+                @include mobile {
+                    top: 85%;
+                    width: 35%;
+                    height: 5%;
+                    left: 75%;
+                    rotate: 90deg;
+                    right: 5%;
+                    bottom: 10%!important;
                 }
             }
             .available{
@@ -53,6 +84,12 @@
             }
             img{
                 border-radius: 10px;
+            }
+                @include mobile{
+                height: 30%;
+                img{
+                    height: 150px;
+                }
             }
         }
         .colRight{
@@ -67,6 +104,10 @@
                 right: 3%;
                 font-size: 1.3rem;
                 cursor: pointer;
+                @include mobile {
+                    font-size: 1.5rem;
+                    right: 4%;
+                }
             }
             .categoryPath{
                 padding-top: .5rem;
@@ -75,47 +116,68 @@
                 span{
                     color: #7e7e7e;
                 }
+                @include mobile {
+                    font-size: 1rem;
+                }
             }
             .title{
                 font-size: 2rem;
                 margin: .5rem 0rem;
-               
+               @include mobile {
+                font-size: 1.3rem;
+               }
             }
             .miniDescription {
-                margin-bottom: 2rem;
-                margin-top: 1rem;
-                font-size: 1.2rem;
+                margin-bottom: 1rem;
+                margin-top: .5rem;
+                font-size: 1rem;
                 color: rgb(53, 53, 53);
+                
             }
 
             .rate{
                 margin-top: 1rem;
+                margin-bottom: 1rem;
                 display: flex;
                 gap: 10px;
                 align-items: center;
+                   @include mobile {
+                margin: .5rem 0rem;
+               }
             }
             .categoryColorFilter {
                 .title{
                     color: #252525;
                     font-weight: bold;
+                    font-size: 18px;
+                       @include mobile {
+                    font-size: 1rem;
+               }
                 }
+               
                 p{
-                    padding: 10px 0px;
+                    
                     color: #9E816F;
                    font-size: 20px;
-                   margin-top: 5px;
-                   margin-bottom: 5px;                   
+                  
+                                    
                 }
-                margin-bottom: 1rem;
+       
             }
             .categorySizeFilter{
                 .title{
                     color: #252525;
-                    font-size: 20px;
+                    font-size: 18px;
                     font-weight: bold;
+                              @include mobile {
+                    font-size: 1rem;
+               }
                 }
                 margin-bottom: 1rem;
-                p{
+                @include mobile {
+                    margin-bottom: .5rem;
+                }
+                  p{
                     padding: 5px 0px;
                     color: #252525;
                    font-size: 16px;
@@ -123,14 +185,26 @@
                    margin-bottom: 10px;  
                     
                 }
+                .sizeDiv{
+                    transition: all .3s ease-in-out;
+                    &:hover{
+                        background-color: #C99846
+                        
+                    }
+                }
+              
             }
             .btns{
                 width: 100%;
-                margin-top: 3rem;
+                margin-top: 1rem;
                 padding: 1rem 0rem;
                 display: flex;
                 gap: 20px;
-                button{
+                @include mobile {
+                    gap: 10px;
+                    margin-top: .5rem;
+                }
+                button, a{
                     padding: 15px 35px; // More padding for a better feel
        
         background: transparent;
@@ -155,6 +229,11 @@
           color: #fff;
           transform: translateY(-2px)!important; // Lift the button slightly on hover
         }
+        @include mobile {
+            width: 50%;
+            font-size: 1rem;
+            padding: 1rem .5rem;
+        }
                 }
                 .addToCart{
                     background-color: #000;
@@ -172,7 +251,47 @@
                         color: #ffffff;
                     }
                 }
+                @include mobile {
+                    width: 100%;
+                }
+            }
+            .quantityFilter{
+ 
+  .title{
+                    color: #252525;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    
+                }
+                
+}
+@include mobile {
+    width: 100%;
+    padding: 1rem;
+}
+        }
+    }
+}
+
+.price{
+    display: flex;
+    align-items: center;
+    color: #284b63;
+    user-select: none;
+    padding: 5px 0px;
+}
+.variants{
+    margin: 20px 0px;
+    p{
+        margin-bottom: 10px;
+        span{
+            font-weight: 600;
+            font-size: 18px;
+            color: #252525;
+            @include mobile {
+                font-size: 1rem;
             }
         }
     }
 }
+

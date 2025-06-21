@@ -15,12 +15,12 @@
     width: 100%;
     display: flex;
     padding: 0 3rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, .2)),url("/newbanner.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, .2)),url("/newbanner.webp");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
+    position: relative;
     @include mobile {
       flex-direction: column;
       justify-content: center;
@@ -45,7 +45,9 @@
         color: #f1f1f1;
         text-transform: uppercase;
         line-height: 1.2; // Better spacing between lines
-       
+       @include mobile {
+        font-size: 3rem;
+       }
       }
   
     .best {
@@ -57,7 +59,7 @@
         text-transform: uppercase;
         opacity: 0.7!important; // Lower opacity for a more subtle effect
         @include mobile {
-         font-size: 4rem; 
+         font-size: 3.5rem; 
         }
       }
   
@@ -92,7 +94,7 @@
         cursor: pointer;
         transition: all 0.3s ease; // Smooth transition for hover effects
         &:hover {
-          background-color: darken(#c99946, 20%);
+          background-color: #c99946c2;
           transform: translateY(-2px)!important; // Lift the button slightly on hover
         }
         @include mobile {
@@ -117,5 +119,37 @@
         height: 0%;
       }
     }
+    .scrollArrow{
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+    cursor: pointer;
+      .icon{
+      
+        background-color: transparent;
+        color: #fff;
+        font-size: 2.5rem;
+        transition: .3s all ease-in-out;
+      }
+      &:hover{
+        .icon{
+          color: #000;
+        }
+      }
+      animation: fadeDown 2s linear .5s infinite forwards ;
+    }
+  }
+
+  @keyframes fadeDown {
+    0%{
+      transform: translateY(0%);
+    }
+    33%{
+      transform: translateY(10%);
+    }
+    66%{
+      transform: translateY(20%);
+    }
+    
   }
   

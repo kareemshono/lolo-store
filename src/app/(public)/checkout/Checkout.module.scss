@@ -1,0 +1,533 @@
+@mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @content;
+  }
+}
+.checkoutPage {
+    width: 100vw;
+    height: 100%;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    @include mobile {
+        padding: 1rem;
+    }
+    .checkoutContainer {
+        box-sizing: border-box;
+        width: 80%;
+        height: 100%;
+        margin-top: 3rem;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        position: relative; // For toast positioning
+        @include mobile {
+            width: 100%;
+            margin-top: 5rem;
+        }
+        .toastContainer {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            .Toastify__toast {
+                border-radius: 8px;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+                background: #ffffff;
+                color: #333333;
+                font-weight: 500;
+            }
+            .Toastify__toast--success {
+                background: #52b202;
+                color: #ffffff;
+            }
+            .Toastify__toast--error {
+                background: #f44336;
+                color: #ffffff;
+            }
+        }
+        .formContainer {
+            height: 100%;
+            display: flex;
+            padding: 1rem;
+            @include mobile {
+                flex-direction: column;
+                width: 100%;
+            }
+            .form {
+                height: 100%;
+                width: 65%;
+                border-right: 1px solid #9f792865;
+                 @include mobile {
+                
+                width: 100%;
+            }
+            }
+            .colSummary {
+                width: 35%;
+                height: 100%;
+                padding: 3rem;
+                margin-left: 1rem;
+                margin-top: 2rem;
+                display: flex;
+                gap: 20px;
+                flex-direction: column;
+                background: #c4c4c45b;
+                border-radius: 10px;
+                @include mobile {
+                    width: 100%;
+                    padding: 1rem;
+                    margin: 0;
+                    margin-top: 1rem;
+                }
+                .summaryTitle {
+                    color: #000;
+                }
+                .row {
+                    width: 100%;
+                    margin-top: 10px;
+                    .colLeft,
+                    .colRight {
+                        p {
+                            margin: 1rem 0rem;
+                            color: #333333;
+                        }
+                    }
+                    .colLeft {
+                        p {
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .stepper {
+        width: 100%;
+        height: 35%;
+        padding: 1rem;
+        display: flex;
+        gap: 2px;
+        justify-content: center;
+        .step1,
+        .step2,
+        .step3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            width: 32%;
+            cursor: pointer;
+            padding: 1rem;
+            @include mobile {
+                width: 33%;
+            }
+            span {
+                box-sizing: border-box;
+                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+                    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            }
+            .nonActive {
+                background-color: #f1f1f1;
+                border: 1px solid #ffd700;
+                width: 30px;
+                height: 30px;
+                font-weight: bold;
+                display: flex;
+                color: #000;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+            p {
+                color: #000;
+                font-size: 16px;
+                font-weight: 600;
+                @include mobile {
+                    font-size: .8rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .paymentDetails {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        .cardType {
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        .header {
+            padding: 0.5rem 1rem;
+            color: #fff;
+            margin-top: 1.5rem;
+            h2 {
+                font-size: 1.3rem;
+            }
+            hr {
+                background: #ffffffb7;
+            }
+        }
+    }
+    .header {
+        padding: 1rem 4rem;
+        color: #fff;
+        background: rgb(57, 43, 23);
+        background: linear-gradient(62deg, rgba(57, 43, 23, 1) 0%, rgba(201, 152, 70, 1) 100%);
+    }
+    .form {
+        padding: 2rem 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        ::placeholder {
+            color: rgba(12, 12, 12, 0.514);
+            opacity: 1; /* Firefox */
+        }
+        ::-ms-input-placeholder {
+            /* Edge 12 -18 */
+            color: rgba(255, 255, 255, 0.705);
+        }
+        @include mobile {
+            padding: .5rem;
+        }
+    }
+    .half {
+        width: 45%;
+    }
+    .full {
+        width: 90%;
+    }
+    .detailsRevContainer {
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        border-radius: 15px;
+        background: #c4c4c45b;
+        @include mobile {
+            padding: 1rem;
+        }
+        p {
+            margin: 15px 0px;
+            color: #000000;
+            font-size: 18px;
+            font-weight: 600;
+            @include mobile {
+                margin: 25px 0px;
+            }
+            span {
+                background-color: #5d4a1f18;
+                border-radius: 5px;
+                padding: 5px;
+                font-weight: normal;
+                letter-spacing: 1.5px;
+                font-size: 16px !important;
+            }
+        }
+    }
+    .formGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin: 0.3rem 0rem;
+        .formLabel {
+            color: #000;
+            font-weight: 600;
+        }
+        .formControl {
+            height: 25px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #000;
+            font-size: 16px;
+            color: #000;
+            &:focus {
+                border-color: #9e816f;
+            }
+        }
+        .formSelect {
+            height: 30px;
+            border: none;
+            outline: none;
+            border-bottom: 3px solid transparent;
+            font-size: 16px;
+            background-color: #d1d1d1cc;
+            color: #000000;
+            &:focus {
+                border-color: #9e816f;
+            }
+        }
+    }
+    .paymentType {
+        padding: 0.5rem 0rem 0rem 0rem;
+    }
+    .row {
+        display: flex;
+        justify-content: space-between;
+        p {
+            color: #f1f1f1;
+        }
+        span {
+            color: #f1f1f1;
+            font-weight: 200;
+        }
+        .btn {
+            padding: 10px 25px;
+            border-radius: 5px;
+            background: #000;
+            border: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            border: 1px solid transparent;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-sizing: border-box;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+                rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            text-transform: uppercase;
+               @include mobile {
+                padding: 5px 10px;
+                font-size: .8rem;
+            }
+            .nextArrow {
+                font-size: 2rem;
+            }
+            cursor: pointer;
+            transition: all 0.3s ease;
+            &:hover {
+                border-color: #000;
+                color: #000;
+                background-color: transparent;
+                transform: translateY(-2px) !important;
+            }
+            &:disabled {
+                background-color: #cccccc;
+                color: #666666;
+                cursor: not-allowed;
+            }
+        }
+        .btnBack {
+            padding: 10px 25px;
+            border-radius: 5px;
+            background: rgba(201, 152, 70, 1);
+            border: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            box-sizing: border-box;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+                rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            text-transform: uppercase;
+            .backArrow {
+                font-size: 1.8rem;
+            }
+            cursor: pointer;
+            transition: all 0.3s ease;
+            @include mobile {
+                padding: 5px 10px;
+            }
+            &:hover {
+                background-color: darken(rgba(201, 152, 70, 1), 5%);
+                transform: translateY(-2px) !important;
+            }
+        }
+    }
+    .cardsRow {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        .cardRegionToggle {
+            display: flex;
+            gap: 10px;
+            margin: 1rem 0;
+            .regionButton {
+                padding: 8px 16px;
+                border-radius: 5px;
+                border: none;
+                background: #0166a03d;
+                color: #333333;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                &:hover {
+                    background: #cfcfcf;
+                    color: #000000;
+                }
+                &.selectedRegion {
+                    background: linear-gradient(62deg, rgba(57, 43, 23, 1) 0%, rgba(201, 152, 70, 1) 100%);
+                    color: #ffffff;
+                    border: none;
+                }
+            }
+        }
+        .payList {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            margin: 1rem 0rem;
+            padding: 1rem 0rem;
+            li {
+                height: 100%;
+                display: flex;
+                padding: 0.1rem;
+                justify-content: center;
+                cursor: pointer;
+                align-items: center;
+                transition: all 0.3s ease;
+                img {
+                    border: 1px solid #333333;
+                    border-radius: 10px;
+                    
+                }
+                &.selectedCard {
+                    transform: scale(1.1);
+                    border: 2px solid #ffd700;
+                    border-radius: 10px;
+                    background: #ffffff;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                }
+                &:hover {
+                    transform: scale(1.05);
+                    border: 1px solid #ffd700;
+                }
+            }
+        }
+        .poweredByIyzico {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 0.5rem;
+            span {
+                color: #333;
+                font-size: 14px;
+                font-weight: 500;
+            }
+            img {
+                border-radius: 5px;
+            }
+        }
+    }
+}
+.active {
+    background-color: #ff9800;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.fulfilled {
+    background-color: #52b202;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.failed {
+    background-color: #f44336;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.btns {
+    width: 75%;
+    margin-top: 1rem;
+    display: flex;
+    gap: 10px;
+    @include mobile {
+        width: 100%;
+    }
+}
+.btnDisabled {
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    color: #636363;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    text-transform: uppercase;
+       @include mobile {
+                padding: 5px 10px;
+            }
+}
+.shopIcon {
+    font-size: 2rem;
+}
+.btns100 {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    gap: 10px;
+    .btn100 {
+        background: rgb(57, 43, 23);
+        background: linear-gradient(62deg, rgba(57, 43, 23, 1) 0%, rgba(201, 152, 70, 1) 100%);
+        padding: 10px 25px;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        outline: none;
+        width: 100%;
+        font-size: 16px;
+        margin-top: 1.5rem;
+        font-weight: 600;
+        box-sizing: border-box;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: darken(rgba(201, 152, 70, 1), 5%);
+            transform: translateY(-2px) !important;
+        }
+    }
+}

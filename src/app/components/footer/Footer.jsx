@@ -2,7 +2,7 @@ import Image from "next/image"
 import { LuCopyright } from "react-icons/lu";
 
 import styles from "./Footer.module.scss"
-import Link from "next/link"
+import TransitionLink from "../transition/TransitionLink";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -16,34 +16,34 @@ const Footer = () => {
             <ul className={styles.list}>
              
                 <li>
-                    <Link href="" >
+                    <TransitionLink href="/shop" >
                     Shop
-                     </Link>
+                     </TransitionLink>
                 </li>
                 <li>
-                    <Link href="" >
+                    <TransitionLink href="/featured" >
                     Featured
-                     </Link>
+                     </TransitionLink>
                 </li>
                 <li>
-                    <Link href="" >
+                    <TransitionLink href="/about" >
                     About
-                     </Link>
+                     </TransitionLink>
                 </li>
                 <li>
-                    <Link href="" >
+                    <TransitionLink href="/contact" >
                     Contact Us
-                     </Link>
+                     </TransitionLink>
                 </li>
                 <li>
-                    <Link href="" >
+                    <TransitionLink href="/signin" >
                     Sign In
-                     </Link>
+                     </TransitionLink>
                 </li>
                 <li>
-                    <Link href="" >
+                    <TransitionLink href="/privacypolicy" >
                     Privacy Policy
-                     </Link>
+                     </TransitionLink>
                 </li>
             </ul>
         </div>
@@ -54,7 +54,7 @@ const Footer = () => {
                 34710 Istanbul,
                 Turkey</p>
             <p>info@nsfashion.store</p>
-                <p>+964 751 124 1004</p>
+                <p>+90 536 513 91 15</p>
         </div>
         </div>
        
@@ -71,15 +71,7 @@ const Footer = () => {
                 <li>
                     <Image src={"/icons/mastercard.svg"} width={60} height={40} alt="vector" />
                 </li>
-                <li>
-                    <Image src={"/icons/paypal.svg"} width={60} height={40} alt="vector" />
-                </li>
-                <li>
-                    <Image src={"/icons/stripe.svg"} width={60} height={40} alt="vector" />
-                </li>
-                <li>
-                    <Image src={"/icons/gpay.svg"} width={60} height={40} alt="vector" />
-                </li>
+           
                 <li></li>
             </ul>
         </div>
